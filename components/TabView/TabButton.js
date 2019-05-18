@@ -10,7 +10,7 @@ import Theme from 'teaset/themes/Theme';
 import Badge from '../Badge/Badge';
 
 export default class TabButton extends Component {
-  
+
   static propTypes = {
     ...TouchableOpacity.propTypes,
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.number]),
@@ -64,7 +64,7 @@ export default class TabButton extends Component {
         height: Theme.tvBarBtnIconSize,
         tintColor: Theme.tvBarBtnIconTintColor,
       };
-      icon = <Image style={iconStyle} source={icon} />
+      icon = <Image style={iconStyle} source={icon}/>
     }
 
     if (!React.isValidElement(activeIcon) && (activeIcon || activeIcon === 0)) {
@@ -73,7 +73,7 @@ export default class TabButton extends Component {
         height: Theme.tvBarBtnIconSize,
         tintColor: Theme.tvBarBtnIconActiveTintColor,
       };
-      activeIcon = <Image style={iconStyle} source={activeIcon} />
+      activeIcon = <Image style={iconStyle} source={activeIcon}/>
     }
 
     if (!React.isValidElement(badge) && badge) {
@@ -82,7 +82,7 @@ export default class TabButton extends Component {
         right: 0,
         top: 0,
       };
-      badge = <Badge style={badgeStyle} count={badge} />;
+      badge = <Badge style={badgeStyle} count={badge}/>;
     }
 
     iconContainerStyle = [{
@@ -91,7 +91,17 @@ export default class TabButton extends Component {
       justifyContent: 'center',
     }].concat(iconContainerStyle);
 
-    this.props = {style, title, titleStyle, activeTitleStyle, icon, activeIcon, active, badge, iconContainerStyle, ...others};
+    this.props = {
+      style,
+      title,
+      titleStyle,
+      activeTitleStyle,
+      icon,
+      activeIcon,
+      active,
+      badge,
+      iconContainerStyle, ...others
+    };
   }
 
   render() {

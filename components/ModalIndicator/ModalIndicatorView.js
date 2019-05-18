@@ -69,7 +69,7 @@ export default class ModalIndicatorView extends Overlay.View {
     let {text} = this.state;
     return (
       <View style={contentStyle}>
-        <ActivityIndicator size={size} color={color} />
+        <ActivityIndicator size={size} color={color}/>
         {React.isValidElement(text) ? text :
           <Text style={{color: Theme.miTextColor, fontSize: Theme.miFontSize, paddingTop: Theme.miTextPaddingTop}}>
             {text}

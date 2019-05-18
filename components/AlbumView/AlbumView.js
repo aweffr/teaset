@@ -187,7 +187,7 @@ export default class AlbumView extends Component {
         onLoadImageFailure={error => onLoadImageFailure && onLoadImageFailure(index, error)}
         ref={'sheet' + index}
         key={'sheet' + index}
-        />
+      />
     );
   }
 
@@ -197,7 +197,8 @@ export default class AlbumView extends Component {
     if (React.isValidElement(control)) {
       control = React.cloneElement(control, {index: this.state.index, total: images.length, carousel: this});
     } else if (control) {
-      control = <this.constructor.Control style={{paddingBottom: Theme.screenInset.bottom}} index={this.state.index} total={images.length} carousel={this} />
+      control = <this.constructor.Control style={{paddingBottom: Theme.screenInset.bottom}} index={this.state.index}
+                                          total={images.length} carousel={this}/>
     }
 
     return (

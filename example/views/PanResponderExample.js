@@ -91,7 +91,7 @@ export default class PanResponderExample extends NavigationPage {
       t1 = {x: touches[0].pageX, y: touches[0].pageY};
     } else {
       t0 = {x: (prevTouches[0].pageX + prevTouches[1].pageX) / 2, y: (prevTouches[0].pageY + prevTouches[1].pageY) / 2};
-      t1 = {x: (touches[0].pageX + touches[1].pageX) / 2, y: (touches[0].pageY + touches[1].pageY) /2};
+      t1 = {x: (touches[0].pageX + touches[1].pageX) / 2, y: (touches[0].pageY + touches[1].pageY) / 2};
     }
     let dx = t1.x - t0.x;
     let dy = t1.y - t0.y;
@@ -137,7 +137,7 @@ export default class PanResponderExample extends NavigationPage {
     let {translateX, translateY, scale} = this.state;
     return (
       <View style={{flex: 1}}>
-        <View style={{backgroundColor: '#faa', height: 60}} />
+        <View style={{backgroundColor: '#faa', height: 60}}/>
         <View style={{backgroundColor: '#fff', padding: 10, overflow: 'hidden'}}>
           <View
             style={{
@@ -150,9 +150,9 @@ export default class PanResponderExample extends NavigationPage {
             ref='view'
             {...this.panResponder.panHandlers}
           >
-            <Input style={{width: 200, height: 30}} />
-            <Image style={{width: 300, height: 500}} resizeMode='cover' source={require('../images/teaset1.jpg')} />
-            <TouchableOpacity style={{flex: 1}} onPress={() => console.log('press')} />
+            <Input style={{width: 200, height: 30}}/>
+            <Image style={{width: 300, height: 500}} resizeMode='cover' source={require('../images/teaset1.jpg')}/>
+            <TouchableOpacity style={{flex: 1}} onPress={() => console.log('press')}/>
           </View>
         </View>
       </View>
@@ -163,7 +163,7 @@ export default class PanResponderExample extends NavigationPage {
     return (
       <View style={{flex: 1}}>
         <MyTouchableOpacity style={styles.full} {...this.panResponder.panHandlers} />
-        <View style={styles.box} />
+        <View style={styles.box}/>
       </View>
     );
   }
@@ -184,7 +184,7 @@ var styles = StyleSheet.create({
     top: 100,
     left: 100,
     right: 100,
-    bottom: 100,    
+    bottom: 100,
   },
 });
 

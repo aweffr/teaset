@@ -27,7 +27,7 @@ export default class NavigationIconButton extends NavigationButton {
         width: 20,
         height: 20,
       };
-      children = <Image style={iconStyle} source={icon} />;
+      children = <Image style={iconStyle} source={icon}/>;
     }
 
     this.props = {icon, children, ...others};

@@ -63,9 +63,11 @@ export default class PopoverPickerExample extends NavigationPage {
     let modalSelected = (modalSelectedIndex || modalSelectedIndex === 0) ? this.items[modalSelectedIndex] : null;
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <ListRow title='Default' detail={selected} ref='defaultRow' onPress={() => this.show(this.refs['defaultRow'])} topSeparator='full' />
-        <ListRow title='Modal' detail={modalSelected} ref='modalRow' onPress={() => this.showModal(this.refs['modalRow'])} bottomSeparator='full' />
+        <View style={{height: 20}}/>
+        <ListRow title='Default' detail={selected} ref='defaultRow' onPress={() => this.show(this.refs['defaultRow'])}
+                 topSeparator='full'/>
+        <ListRow title='Modal' detail={modalSelected} ref='modalRow'
+                 onPress={() => this.showModal(this.refs['modalRow'])} bottomSeparator='full'/>
       </ScrollView>
     );
   }

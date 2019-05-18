@@ -80,9 +80,9 @@ export default class MultiScrollViewExample extends NavigationPage {
         onLayout={e => this.onOutScrollViewLayout(e)}
       >
         <Carousel style={{height: 238}} control={true}>
-          <Image style={{width, height: 238}} resizeMode='cover' source={require('../images/teaset1.jpg')} />
-          <Image style={{width, height: 238}} resizeMode='cover' source={require('../images/teaset2.jpg')} />
-          <Image style={{width, height: 238}} resizeMode='cover' source={require('../images/teaset3.jpg')} />
+          <Image style={{width, height: 238}} resizeMode='cover' source={require('../images/teaset1.jpg')}/>
+          <Image style={{width, height: 238}} resizeMode='cover' source={require('../images/teaset2.jpg')}/>
+          <Image style={{width, height: 238}} resizeMode='cover' source={require('../images/teaset3.jpg')}/>
         </Carousel>
         <SegmentedView style={{height: height}}>
           <SegmentedView.Sheet title='one'>
@@ -92,7 +92,7 @@ export default class MultiScrollViewExample extends NavigationPage {
               scrollEventThrottle={16}
               onScroll={(e) => this.onInnerScrollViewScroll(e)}
             >
-              {items.map((item, index) => <ListRow title={item} key={'0' + index} />)}
+              {items.map((item, index) => <ListRow title={item} key={'0' + index}/>)}
             </ScrollView>
           </SegmentedView.Sheet>
           <SegmentedView.Sheet title='two'>
@@ -102,7 +102,7 @@ export default class MultiScrollViewExample extends NavigationPage {
               scrollEventThrottle={16}
               onScroll={(e) => this.onInnerScrollViewScroll(e)}
             >
-              {items.map((item, index) => <ListRow title={item} key={'0' + index} />)}
+              {items.map((item, index) => <ListRow title={item} key={'0' + index}/>)}
             </ScrollView>
           </SegmentedView.Sheet>
         </SegmentedView>

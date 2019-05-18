@@ -69,7 +69,7 @@ export default class PopoverPickerView extends Overlay.PopoverView {
             title={getItemText ? getItemText(item, index) : item}
             selected={index === selectedIndex}
             onPress={() => this.onItemPress(index)}
-            />
+          />
         ))}
       </ScrollView>
     );

@@ -29,7 +29,7 @@ export default class MenuItem extends Component {
       paddingLeft: Theme.menuItemPaddingLeft,
       paddingRight: Theme.menuItemPaddingRight,
       paddingTop: Theme.menuItemPaddingTop,
-      paddingBottom: Theme.menuItemPaddingBottom,      
+      paddingBottom: Theme.menuItemPaddingBottom,
       borderColor: Theme.menuItemSeparatorColor,
       borderTopWidth: Theme.menuItemSeparatorWidth,
       flexDirection: 'row',
@@ -45,7 +45,7 @@ export default class MenuItem extends Component {
       };
       icon = (
         <View style={{paddingRight: Theme.menuItemIconPaddingRight}}>
-          <Image style={imageStyle} source={icon === 'empty' ? null : icon} />
+          <Image style={imageStyle} source={icon === 'empty' ? null : icon}/>
         </View>
       );
     }

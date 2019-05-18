@@ -93,12 +93,15 @@ export default class ListRow extends Component {
     }
     if (typeof title === 'string' || typeof title === 'number') {
       let textStyle = (!detail && titlePlace === 'left') ? {flexGrow: 1, flexShrink: 1} : null;
-      title = <Label style={[textStyle, titleStyle]} type='title' text={title} />
+      title = <Label style={[textStyle, titleStyle]} type='title' text={title}/>
     }
 
     //detail
     if (typeof detail === 'string' || typeof detail === 'number') {
-      let textStyle = titlePlace === 'top' ? {lineHeight: Theme.rowDetailLineHeight, color: Theme.labelTextColor} : {flexGrow: 1, flexShrink: 1, textAlign: 'right'};
+      let textStyle = titlePlace === 'top' ? {
+        lineHeight: Theme.rowDetailLineHeight,
+        color: Theme.labelTextColor
+      } : {flexGrow: 1, flexShrink: 1, textAlign: 'right'};
       if (title) {
         if (titlePlace === 'left') textStyle.paddingLeft = Theme.rowPaddingTitleDetail;
         else textStyle.paddingTop = Theme.rowPaddingTitleDetail;
@@ -106,14 +109,15 @@ export default class ListRow extends Component {
       if (!detailMultiLine && detailMultiLine !== false) {
         detailMultiLine = titlePlace === 'top';
       }
-      detail = <Label style={[textStyle, detailStyle]} type='detail' text={detail} numberOfLines={detailMultiLine ? 0 : 1} />
+      detail =
+        <Label style={[textStyle, detailStyle]} type='detail' text={detail} numberOfLines={detailMultiLine ? 0 : 1}/>
     }
 
     //icon
     if ((icon || icon === 0) && !React.isValidElement(icon)) {
       icon = (
         <View style={{paddingRight: Theme.rowIconPaddingRight}}>
-          <Image style={{width: Theme.rowIconWidth, height: Theme.rowIconHeight}} source={icon} />
+          <Image style={{width: Theme.rowIconWidth, height: Theme.rowIconHeight}} source={icon}/>
         </View>
       );
     }
@@ -135,7 +139,8 @@ export default class ListRow extends Component {
           imageSource = require('teaset/icons/indicator.png');
           tintColor = Theme.rowAccessoryIndicatorColor;
           break;
-        default: imageSource = accessory;
+        default:
+          imageSource = accessory;
       }
       let imageStyle = {
         width: Theme.rowAccessoryWidth,
@@ -144,7 +149,7 @@ export default class ListRow extends Component {
       };
       accessory = (
         <View style={{paddingLeft: Theme.rowAccessoryPaddingLeft}}>
-          <Image style={imageStyle} source={imageSource} />
+          <Image style={imageStyle} source={imageSource}/>
         </View>
       );
     }
@@ -163,12 +168,12 @@ export default class ListRow extends Component {
         topSeparator = null;
         break;
       case 'full':
-        topSeparator = <View style={separatorStyle} />;
+        topSeparator = <View style={separatorStyle}/>;
         break;
       case 'indent':
         topSeparator = (
           <View style={indentViewStyle}>
-            <View style={separatorStyle} />
+            <View style={separatorStyle}/>
           </View>
         );
         break;
@@ -178,18 +183,33 @@ export default class ListRow extends Component {
         bottomSeparator = null;
         break;
       case 'full':
-        bottomSeparator = <View style={separatorStyle} />;
+        bottomSeparator = <View style={separatorStyle}/>;
         break;
       case 'indent':
         bottomSeparator = (
           <View style={indentViewStyle}>
-            <View style={separatorStyle} />
+            <View style={separatorStyle}/>
           </View>
         );
-        break;        
+        break;
     }
 
-    this.props = {style, activeOpacity, onPress, title, detail, titleStyle, detailStyle, detailMultiLine, icon, accessory, topSeparator, bottomSeparator, titlePlace, contentStyle, ...others};
+    this.props = {
+      style,
+      activeOpacity,
+      onPress,
+      title,
+      detail,
+      titleStyle,
+      detailStyle,
+      detailMultiLine,
+      icon,
+      accessory,
+      topSeparator,
+      bottomSeparator,
+      titlePlace,
+      contentStyle, ...others
+    };
   }
 
   renderSwipeActionView() {

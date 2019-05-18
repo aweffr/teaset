@@ -18,8 +18,8 @@ const PAD_HEIGHT = 1024;
 
 const {width: D_WIDTH, height: D_HEIGHT} = Dimensions.get('window');
 
-const { PlatformConstants = {} } = NativeModules;
-const { minor = 0 } = PlatformConstants.reactNativeVersion || {};
+const {PlatformConstants = {}} = NativeModules;
+const {minor = 0} = PlatformConstants.reactNativeVersion || {};
 
 const isIPhoneX = (() => {
   if (Platform.OS === 'web') return false;
@@ -58,7 +58,7 @@ const Theme = {
     violet: ThemeViolet,
   },
 
-  set: function(theme) {
+  set: function (theme) {
     Object.assign(this, theme);
   },
 

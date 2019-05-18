@@ -30,8 +30,8 @@ export default class ThemeExample extends NavigationPage {
   renderPage() {
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <ListRow title='Select theme' onPress={() => this.changeTheme()} topSeparator='full' bottomSeparator='full' />
+        <View style={{height: 20}}/>
+        <ListRow title='Select theme' onPress={() => this.changeTheme()} topSeparator='full' bottomSeparator='full'/>
       </ScrollView>
     );
   }

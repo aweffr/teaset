@@ -143,7 +143,7 @@ export default class AlbumSheet extends TransformView {
     let {space} = this.props;
     let {fitWidth, viewWidth, scale} = this.state;
     let scaleWidth = fitWidth * scale._value; //image scale width
-    let exceedWidth = scaleWidth > viewWidth ? scaleWidth - viewWidth : 0; 
+    let exceedWidth = scaleWidth > viewWidth ? scaleWidth - viewWidth : 0;
     let leftX = -(viewWidth + space + exceedWidth / 2); //scroll to left position
     let rightX = viewWidth + space + exceedWidth / 2; //scroll to right position
     let centerLeftX = -exceedWidth / 2; //scroll from left to center position
@@ -173,8 +173,7 @@ export default class AlbumSheet extends TransformView {
     if (height > this.viewLayout.height) {
       if (y > 0) {
         valueY = translateY._value - y;
-      }
-      else if ((y + height) <  this.viewLayout.height) {
+      } else if ((y + height) < this.viewLayout.height) {
         valueY = translateY._value + (this.viewLayout.height - (y + height));
       }
     }
@@ -194,7 +193,7 @@ export default class AlbumSheet extends TransformView {
             toValue: valueY,
             easing: Easing.elastic(0),
             duration: 200,
-          }),          
+          }),
         ]).start();
       } else {
         translateX.setValue(valueX);
@@ -232,9 +231,14 @@ export default class AlbumSheet extends TransformView {
     scale.setValue(1);
     translateY.setValue(0);
     switch (position) {
-      case 'left': translateX.setValue(-(viewWidth + space)); break;
-      case 'right': translateX.setValue(viewWidth + space); break;
-      default: translateX.setValue(0);
+      case 'left':
+        translateX.setValue(-(viewWidth + space));
+        break;
+      case 'right':
+        translateX.setValue(viewWidth + space);
+        break;
+      default:
+        translateX.setValue(0);
     }
   }
 
@@ -281,9 +285,9 @@ export default class AlbumSheet extends TransformView {
       children = React.cloneElement(image, {style: childrenStyle});
     } else {
       if (imageLoaded || !thumb) {
-        children = <Image style={childrenStyle} resizeMode='contain' source={image} />;
+        children = <Image style={childrenStyle} resizeMode='contain' source={image}/>;
       } else {
-        children = <Image style={childrenStyle} resizeMode='contain' source={thumb} />;
+        children = <Image style={childrenStyle} resizeMode='contain' source={thumb}/>;
       }
     }
 

@@ -44,7 +44,7 @@ export default class WheelExample extends NavigationPage {
       date.setMonth(month);
     } else {
       date.setMonth(month);
-      date.setDate(day);      
+      date.setDate(day);
     }
     this.setState({date});
   }
@@ -57,29 +57,30 @@ export default class WheelExample extends NavigationPage {
     for (let i = 1; i <= daysCount; ++i) days.push(i);
     return (
       <View style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <View style={{backgroundColor: Theme.defaultColor, padding: 20, flexDirection: 'row', justifyContent: 'center'}}>
+        <View style={{height: 20}}/>
+        <View
+          style={{backgroundColor: Theme.defaultColor, padding: 20, flexDirection: 'row', justifyContent: 'center'}}>
           <Wheel
             style={{height: 200, width: 80}}
             itemStyle={{textAlign: 'center'}}
             items={this.years}
             index={this.years.indexOf(year)}
             onChange={index => this.onDateChange(this.years[index], month, day)}
-            />
+          />
           <Wheel
             style={{height: 200, width: 80}}
             itemStyle={{textAlign: 'center'}}
             items={this.months}
             index={this.months.indexOf(month + 1)}
             onChange={index => this.onDateChange(year, this.months[index] - 1, day)}
-            />
+          />
           <Wheel
             style={{height: 200, width: 80}}
             itemStyle={{textAlign: 'center'}}
             items={days}
             index={days.indexOf(day)}
             onChange={index => this.onDateChange(year, month, days[index])}
-            />
+          />
         </View>
       </View>
     );

@@ -44,7 +44,7 @@ export default class CarouselControl extends Component {
             height: Theme.carouselDotSize,
             borderRadius: Theme.carouselDotSize / 2,
           }}
-          />
+        />
       </TouchableOpacity>
     );
   }
@@ -72,7 +72,7 @@ export default class CarouselControl extends Component {
             height: Theme.carouselDotSize,
             borderRadius: Theme.carouselDotSize / 2,
           }}
-          />
+        />
       </TouchableOpacity>
     );
   }

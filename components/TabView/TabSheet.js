@@ -9,7 +9,7 @@ import {View, ViewPropTypes} from 'react-native';
 import Theme from 'teaset/themes/Theme';
 
 export default class TabSheet extends Component {
-  
+
   static propTypes = {
     type: PropTypes.oneOf(['sheet', 'button']),
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.number]),

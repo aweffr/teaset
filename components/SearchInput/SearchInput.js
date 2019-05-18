@@ -22,7 +22,7 @@ export default class SearchInput extends Component {
     ...TextInput.defaultProps,
     disabled: false,
     underlineColorAndroid: 'rgba(0, 0, 0, 0)',
-  };  
+  };
 
   constructor(props) {
     super(props);
@@ -146,7 +146,7 @@ export default class SearchInput extends Component {
                 <Image
                   style={{width: iconSize, height: iconSize, tintColor: placeholderTextColor}}
                   source={require('../../icons/search.png')}
-                  />
+                />
               </View>
               <Text style={{paddingLeft: paddingSize, color: placeholderTextColor, fontSize: fs.fontSize}}>
                 {value ? null : placeholder}
@@ -164,7 +164,7 @@ export default class SearchInput extends Component {
             selectionColor={this.state.selectionColor ? this.state.selectionColor : selectionColor}
             {...others}
             ref='textInput'
-            />
+          />
         </View>
       </View>
     );

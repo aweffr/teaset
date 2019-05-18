@@ -9,7 +9,7 @@ import {StyleSheet, View, Text, TouchableOpacity, Animated} from 'react-native';
 import Theme from 'teaset/themes/Theme';
 
 export default class SwipeTouchableOpacity extends TouchableOpacity {
-  
+
   static propTypes = {
     ...TouchableOpacity.propTypes,
     swipeable: PropTypes.bool,
@@ -87,7 +87,7 @@ export default class SwipeTouchableOpacity extends TouchableOpacity {
     }
 
     let dx = touches[0].pageX - prevTouches[0].pageX;
-    if (Math.abs(this.translateX) > this.props.swipeWidth){
+    if (Math.abs(this.translateX) > this.props.swipeWidth) {
       this.translateX += dx / 3;
     } else {
       this.translateX += dx;
@@ -116,7 +116,7 @@ export default class SwipeTouchableOpacity extends TouchableOpacity {
       } else {
         this.timingClose();
       }
-    }    
+    }
   }
 
   checkPress() {

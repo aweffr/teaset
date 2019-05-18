@@ -26,7 +26,7 @@ export default class NavigationBar extends Component {
     background: PropTypes.element,
     hidden: PropTypes.bool, //bar hidden
     animated: PropTypes.bool, //hide or show bar with animation
-    statusBarStyle: PropTypes.oneOf(['default', 'light-content','dark-content',]), //status bar style (iOS only)
+    statusBarStyle: PropTypes.oneOf(['default', 'light-content', 'dark-content',]), //status bar style (iOS only)
     statusBarColor: PropTypes.string, //status bar color, default: style.backgroundColor
     statusBarHidden: PropTypes.bool, //status bar hidden
     statusBarInsets: PropTypes.bool, //auto add space for iOS status bar
@@ -150,7 +150,9 @@ export default class NavigationBar extends Component {
 
     //convert string title to NavigationBar.Title
     if (typeof title === 'string') {
-      title = <this.constructor.Title style={[{textAlign: titleTextAlign, color: Theme.navTitleColor}].concat(titleStyle)} text={title} />;
+      title =
+        <this.constructor.Title style={[{textAlign: titleTextAlign, color: Theme.navTitleColor}].concat(titleStyle)}
+                                text={title}/>;
     }
 
     //build backgroundView style
@@ -164,7 +166,21 @@ export default class NavigationBar extends Component {
       opacity: this.state.barOpacity,
     };
 
-    return ({style, type, title, titleStyle, tintColor, titleViewStyle, leftRightViewStyle, backgroundViewStyle, hidden, animated, statusBarColor, statusBarStyle, statusBarInsets, ...others});
+    return ({
+      style,
+      type,
+      title,
+      titleStyle,
+      tintColor,
+      titleViewStyle,
+      leftRightViewStyle,
+      backgroundViewStyle,
+      hidden,
+      animated,
+      statusBarColor,
+      statusBarStyle,
+      statusBarInsets, ...others
+    });
   }
 
   checkBarHidden(hidden, animated) {
@@ -180,7 +196,7 @@ export default class NavigationBar extends Component {
       } else {
         barTop.setValue(barTopValue);
         barOpacity.setValue(barOpacityValue);
-      }      
+      }
     }
   }
 
@@ -213,7 +229,8 @@ export default class NavigationBar extends Component {
     let {style, animated, statusBarStyle, statusBarColor, statusBarHidden, title, titleViewStyle, leftRightViewStyle, leftView, rightView, background, backgroundViewStyle, ...others} = this.buildProps();
     return (
       <Animated.View style={style} {...others} onLayout={e => this.onLayout(e)}>
-        <StatusBar backgroundColor={statusBarColor} translucent={true} barStyle={statusBarStyle} animated={animated} hidden={statusBarHidden} />
+        <StatusBar backgroundColor={statusBarColor} translucent={true} barStyle={statusBarStyle} animated={animated}
+                   hidden={statusBarHidden}/>
         <Animated.View style={backgroundViewStyle}>{background}</Animated.View>
         <Animated.View style={titleViewStyle}>{title}</Animated.View>
         <Animated.View style={leftRightViewStyle} onLayout={e => this.onLeftViewLayout(e)}>{leftView}</Animated.View>

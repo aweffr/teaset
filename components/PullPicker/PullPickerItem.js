@@ -17,7 +17,7 @@ export default class PullPickerItem extends ListRow {
   buildProps() {
     let {selected, accessory, ...others} = this.props;
     accessory = selected ? 'check' : 'empty';
-    this.props = {selected, accessory, ...others} ;
+    this.props = {selected, accessory, ...others};
 
     super.buildProps();
   }

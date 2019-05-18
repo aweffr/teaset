@@ -61,7 +61,7 @@ export default class ActionSheetView extends Overlay.PullView {
           topSeparator={i === 0 ? 'none' : 'full'}
           disabled={item.disabled}
           onPress={() => this.onItemPress(item)}
-          />
+        />
       );
     }
     if (cancelItem) {
@@ -73,7 +73,7 @@ export default class ActionSheetView extends Overlay.PullView {
           topSeparator='full'
           disabled={cancelItem.disabled}
           onPress={() => this.onCancelItemPress()}
-          />
+        />
       );
     }
     children.push(
@@ -83,7 +83,7 @@ export default class ActionSheetView extends Overlay.PullView {
           height: Theme.screenInset.bottom
         }}
         key={'bottomSpace'}
-        />
+      />
     );
 
     this.props = {items, cancelItem, children, ...others};

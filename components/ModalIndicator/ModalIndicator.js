@@ -21,7 +21,7 @@ export default class ModalIndicator extends Overlay {
       return;
     }
     miKey = super.show(
-      <this.IndicatorView text={text} ref={v => miOverlay = v} />
+      <this.IndicatorView text={text} ref={v => miOverlay = v}/>
     );
   }
 

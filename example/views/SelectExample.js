@@ -36,7 +36,7 @@ export default class SelectExample extends NavigationPage {
         text: 'Short',
         value: 2,
       }, {
-        text: <Image style={{width: 40, height: 40}} source={require('../images/teaset1_s.jpg')} />,
+        text: <Image style={{width: 40, height: 40}} source={require('../images/teaset1_s.jpg')}/>,
         value: 3,
       },
     ];
@@ -57,7 +57,7 @@ export default class SelectExample extends NavigationPage {
     let {valueSM, valueMD, valueLG, valueAuto, valuePull, valuePopover, valueReadonly, valueDisable, valueCustom} = this.state;
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
+        <View style={{height: 20}}/>
         <ListRow
           title='Size sm'
           detail={
@@ -69,8 +69,8 @@ export default class SelectExample extends NavigationPage {
               placeholder='Select item'
               pickerTitle='Size sm'
               onSelected={(item, index) => this.setState({valueSM: item})}
-              />
-          } topSeparator='full' />
+            />
+          } topSeparator='full'/>
         <ListRow
           title='Size md'
           detail={
@@ -82,8 +82,8 @@ export default class SelectExample extends NavigationPage {
               placeholder='Select item'
               pickerTitle='Size md'
               onSelected={(item, index) => this.setState({valueMD: item})}
-              />
-          } />
+            />
+          }/>
         <ListRow
           title='Size lg'
           detail={
@@ -95,9 +95,9 @@ export default class SelectExample extends NavigationPage {
               placeholder='Select item'
               pickerTitle='Size lg'
               onSelected={(item, index) => this.setState({valueLG: item})}
-              />
-          } bottomSeparator='full' />
-        <View style={{height: 20}} />
+            />
+          } bottomSeparator='full'/>
+        <View style={{height: 20}}/>
         <ListRow
           title='PickerType auto'
           detail={
@@ -110,8 +110,8 @@ export default class SelectExample extends NavigationPage {
               pickerType='auto'
               pickerTitle='PickerType auto'
               onSelected={(item, index) => this.setState({valueAuto: item})}
-              />
-          } />
+            />
+          }/>
         <ListRow
           title='PickerType pull'
           detail={
@@ -124,8 +124,8 @@ export default class SelectExample extends NavigationPage {
               pickerType='pull'
               pickerTitle='PickerType pull'
               onSelected={(item, index) => this.setState({valuePull: item})}
-              />
-          } />
+            />
+          }/>
         <ListRow
           title='PickerType popover'
           detail={
@@ -138,9 +138,9 @@ export default class SelectExample extends NavigationPage {
               pickerType='popover'
               pickerTitle='PickerType popover'
               onSelected={(item, index) => this.setState({valuePopover: item})}
-              />
-          } />
-        <View style={{height: 20}} />
+            />
+          }/>
+        <View style={{height: 20}}/>
         <ListRow
           title='Readonly'
           detail={
@@ -149,8 +149,8 @@ export default class SelectExample extends NavigationPage {
               placeholder='Select item'
               editable={false}
               value={valueReadonly}
-              />
-          } topSeparator='full' />
+            />
+          } topSeparator='full'/>
         <ListRow
           title='Disabled'
           detail={
@@ -160,9 +160,9 @@ export default class SelectExample extends NavigationPage {
               placeholder='Select item'
               disabled={true}
               value={valueDisable}
-              />
-          } bottomSeparator='full' />
-        <View style={{height: 20}} />
+            />
+          } bottomSeparator='full'/>
+        <View style={{height: 20}}/>
         <ListRow
           title='Custom'
           detail={
@@ -178,8 +178,8 @@ export default class SelectExample extends NavigationPage {
               placeholder='Select item'
               pickerTitle='Custom'
               onSelected={(item, index) => this.setState({valueCustom: item.value})}
-              />
-          } topSeparator='full' bottomSeparator='full' />
+            />
+          } topSeparator='full' bottomSeparator='full'/>
       </ScrollView>
     );
   }

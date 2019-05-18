@@ -24,7 +24,8 @@ export default class TeaNavigator extends Component {
         <Text style={{fontSize: 36, padding: 10}}>Teaset</Text>
         <Text style={{fontSize: 13, padding: 10}}>
           <Text style={{fontWeight: 'bold'}}>Set TeaNavigator.rootView to show main page.{'\n\n'}</Text>
-          <Text style={{color: '#ff7800'}}>class</Text> <Text style={{color: '#3b5bb5'}}>Application</Text> <Text style={{color: '#ff7800'}}>extends</Text> Component{' {\n\n'}
+          <Text style={{color: '#ff7800'}}>class</Text> <Text style={{color: '#3b5bb5'}}>Application</Text> <Text
+          style={{color: '#ff7800'}}>extends</Text> Component{' {\n\n'}
           {'  '}<Text style={{color: '#3b5bb5'}}>render</Text>(){' {\n'}
           {'    '}<Text style={{color: '#ff7800'}}>return</Text> {'<TeaNavigator rootView={YourRootView} />;\n'}
           {'  }\n\n'}

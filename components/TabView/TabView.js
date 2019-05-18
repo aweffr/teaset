@@ -95,7 +95,7 @@ export default class TabView extends Component {
     let sheetCount = 0;
     return (
       <View pointerEvents='box-none'>
-        <View style={barStyle} />
+        <View style={barStyle}/>
         <View style={buttonContainerStyle} pointerEvents='box-none'>
           {children.map((item, index) => {
             let {type, title, icon, activeIcon, iconContainerStyle, badge, onPress} = item.props;
@@ -114,13 +114,13 @@ export default class TabView extends Component {
                 onPress={e => {
                   if (type === 'sheet') {
                     this.setState({activeIndex: sheetIndex}, () => {
-                      this.refs.carousel && this.refs.carousel.scrollToPage(sheetIndex);                  
+                      this.refs.carousel && this.refs.carousel.scrollToPage(sheetIndex);
                       onChange && onChange(sheetIndex);
                     });
                   }
                   onPress && onPress(e);
                 }}
-                />
+              />
             );
           })}
         </View>
@@ -162,7 +162,7 @@ export default class TabView extends Component {
     return (
       <View {...others}>
         {type === 'carousel' ? this.renderCarousel(props) : this.renderProjector(props)}
-        <View style={{height: barStyle.height, width: 1}} />
+        <View style={{height: barStyle.height, width: 1}}/>
         {this.renderBar(props)}
       </View>
     );

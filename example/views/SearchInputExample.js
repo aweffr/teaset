@@ -25,18 +25,20 @@ export default class SearchInputExample extends NavigationPage {
   renderPage() {
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
+        <View style={{height: 20}}/>
         <ListRow title='Default' detail={
-          <SearchInput style={{width: 200}} placeholder='Enter text' clearButtonMode='while-editing' />
-        } topSeparator='full' bottomSeparator='full' />
-        <View style={{height: 20}} />
+          <SearchInput style={{width: 200}} placeholder='Enter text' clearButtonMode='while-editing'/>
+        } topSeparator='full' bottomSeparator='full'/>
+        <View style={{height: 20}}/>
         <ListRow title='Readonly' detail={
-          <SearchInput style={{width: 200}} placeholder='Enter text' clearButtonMode='while-editing' value='Readonly' editable={false} />
-        } topSeparator='full' />
+          <SearchInput style={{width: 200}} placeholder='Enter text' clearButtonMode='while-editing' value='Readonly'
+                       editable={false}/>
+        } topSeparator='full'/>
         <ListRow title='Disabled' detail={
-          <SearchInput style={{width: 200}} placeholder='Enter text' clearButtonMode='while-editing' value='Disabled' disabled={true} />
-        } bottomSeparator='full' />
-        <View style={{height: 20}} />
+          <SearchInput style={{width: 200}} placeholder='Enter text' clearButtonMode='while-editing' value='Disabled'
+                       disabled={true}/>
+        } bottomSeparator='full'/>
+        <View style={{height: 20}}/>
         <ListRow title='Custom' detail={
           <SearchInput
             style={{width: 200, height: 40, backgroundColor: '#rgba(238, 169, 91, 0.1)', borderColor: '#8a6d3b'}}
@@ -46,8 +48,8 @@ export default class SearchInputExample extends NavigationPage {
             placeholder='Custom'
             placeholderTextColor='#aaa'
             onChangeText={text => this.setState({valueCustom: text})}
-            />
-        } topSeparator='full' bottomSeparator='full' />
+          />
+        } topSeparator='full' bottomSeparator='full'/>
       </ScrollView>
     );
   }

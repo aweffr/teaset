@@ -29,11 +29,20 @@ export default class Label extends Component {
 
     let color, fontSize;
     switch (size) {
-      case 'xl': fontSize = Theme.labelFontSizeXL; break;
-      case 'lg': fontSize = Theme.labelFontSizeLG; break;
-      case 'sm': fontSize = Theme.labelFontSizeSM; break;
-      case 'xs': fontSize = Theme.labelFontSizeXS; break;
-      default: fontSize = Theme.labelFontSizeMD;
+      case 'xl':
+        fontSize = Theme.labelFontSizeXL;
+        break;
+      case 'lg':
+        fontSize = Theme.labelFontSizeLG;
+        break;
+      case 'sm':
+        fontSize = Theme.labelFontSizeSM;
+        break;
+      case 'xs':
+        fontSize = Theme.labelFontSizeXS;
+        break;
+      default:
+        fontSize = Theme.labelFontSizeMD;
     }
     switch (type) {
       case 'title':

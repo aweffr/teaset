@@ -20,7 +20,7 @@ export default class Drawer extends Overlay {
     );
     return {
       key: key,
-      close: function(animated) {
+      close: function (animated) {
         drawer && drawer.close(animated);
       },
     };

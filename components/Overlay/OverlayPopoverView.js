@@ -67,10 +67,18 @@ export default class OverlayPopoverView extends OverlayView {
       if (!showArrow) arrow = 'none';
       else {
         switch (direction) {
-          case 'right': arrow = 'left'; break;
-          case 'left': arrow = 'right'; break;
-          case 'up': arrow = 'bottom'; break;
-          default: arrow = 'top'; break;
+          case 'right':
+            arrow = 'left';
+            break;
+          case 'left':
+            arrow = 'right';
+            break;
+          case 'up':
+            arrow = 'bottom';
+            break;
+          default:
+            arrow = 'top';
+            break;
         }
       }
       popoverStyle = [].concat(popoverStyle).concat({position: 'absolute', left: 0, top: 0});
@@ -142,8 +150,7 @@ export default class OverlayPopoverView extends OverlayView {
           arrow += 'Right';
           break;
       }
-    }
-    else if (direction == 'right' || direction == 'left') {
+    } else if (direction == 'right' || direction == 'left') {
       switch (align) {
         case 'end':
           py = y + height - popoverHeight + alignInsets;
@@ -166,7 +173,16 @@ export default class OverlayPopoverView extends OverlayView {
     });
     if (!showArrow) arrow = 'none';
 
-    this.props = {popoverStyle, direction, autoDirection, directionInsets, align, alignInsets, showArrow, arrow, ...others};
+    this.props = {
+      popoverStyle,
+      direction,
+      autoDirection,
+      directionInsets,
+      align,
+      alignInsets,
+      showArrow,
+      arrow, ...others
+    };
   }
 
   onPopoverLayout(e) {

@@ -53,7 +53,7 @@ export default class OverlayPullView extends OverlayView {
     );
     return animates;
   }
-  
+
   get disappearAnimates() {
     let animates = super.disappearAnimates;
     animates.push(
@@ -84,10 +84,14 @@ export default class OverlayPullView extends OverlayView {
     switch (rootTransform) {
       case 'translate':
         switch (side) {
-          case 'top': return [{translateY: this.viewLayout.height}];
-          case 'left': return [{translateX: this.viewLayout.width}];
-          case 'right': return [{translateX: -this.viewLayout.width}];
-          default: return [{translateY: -this.viewLayout.height}];
+          case 'top':
+            return [{translateY: this.viewLayout.height}];
+          case 'left':
+            return [{translateX: this.viewLayout.width}];
+          case 'right':
+            return [{translateX: -this.viewLayout.width}];
+          default:
+            return [{translateY: -this.viewLayout.height}];
         }
         break;
       case 'scale':

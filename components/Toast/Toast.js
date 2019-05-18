@@ -27,13 +27,17 @@ export default class Toast extends Overlay {
   //   position: PropTypes.oneOf(['top', 'bottom', 'center']),
   //   duration: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['short', 'long'])]),
   static show(options) {
-    let {duration, ...others} = options && typeof options === 'object' ? options : {};    
+    let {duration, ...others} = options && typeof options === 'object' ? options : {};
 
     let key = super.show(<this.ToastView {...others} />);
     if (typeof duration !== 'number') {
       switch (duration) {
-        case 'long': duration = 3500; break;
-        default: duration = 2000; break;
+        case 'long':
+          duration = 3500;
+          break;
+        default:
+          duration = 2000;
+          break;
       }
     }
     setTimeout(() => this.hide(key), duration);

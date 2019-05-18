@@ -66,13 +66,27 @@ export default class ToastView extends Overlay.View {
         let imageSource;
         if (typeof icon === 'string') {
           switch (icon) {
-            case 'success': imageSource = require('../../icons/success.png'); break;
-            case 'fail': imageSource = require('../../icons/fail.png'); break;
-            case 'smile': imageSource = require('../../icons/smile.png'); break;
-            case 'sad': imageSource = require('../../icons/sad.png'); break;
-            case 'info': imageSource = require('../../icons/info.png'); break;
-            case 'stop': imageSource = require('../../icons/stop.png'); break;
-            default: imageSource = null; break;
+            case 'success':
+              imageSource = require('../../icons/success.png');
+              break;
+            case 'fail':
+              imageSource = require('../../icons/fail.png');
+              break;
+            case 'smile':
+              imageSource = require('../../icons/smile.png');
+              break;
+            case 'sad':
+              imageSource = require('../../icons/sad.png');
+              break;
+            case 'info':
+              imageSource = require('../../icons/info.png');
+              break;
+            case 'stop':
+              imageSource = require('../../icons/stop.png');
+              break;
+            default:
+              imageSource = null;
+              break;
           }
         } else {
           imageSource = icon;
@@ -81,7 +95,7 @@ export default class ToastView extends Overlay.View {
           <Image
             style={{width: Theme.toastIconWidth, height: Theme.toastIconHeight, tintColor: Theme.toastIconTintColor}}
             source={imageSource}
-            />
+          />
         );
       } else {
         image = icon;

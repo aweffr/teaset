@@ -45,7 +45,7 @@ export default class Badge extends Component {
         break;
       case 'dot':
         width = Theme.badgeDotSize;
-        height = Theme.badgeDotSize;        
+        height = Theme.badgeDotSize;
         borderRadius = Theme.badgeDotSize / 2;
         borderWidth = 0;
         padding = 0;

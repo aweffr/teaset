@@ -11,7 +11,7 @@ import PullPicker from '../PullPicker/PullPicker';
 import PopoverPicker from '../PopoverPicker/PopoverPicker';
 
 export default class Select extends Component {
-  
+
   static propTypes = {
     ...TouchableOpacity.propTypes,
     size: PropTypes.oneOf(['lg', 'md', 'sm']),
@@ -156,8 +156,19 @@ export default class Select extends Component {
 
     //iconTintColor
     if (!iconTintColor) iconTintColor = Theme.selectIconTintColor;
-    
-    this.props = {style, size, value, valueStyle, valueElement, disabled, iconTintColor, iconSize, placeholder, placeholderTextColor, ...others};
+
+    this.props = {
+      style,
+      size,
+      value,
+      valueStyle,
+      valueElement,
+      disabled,
+      iconTintColor,
+      iconSize,
+      placeholder,
+      placeholderTextColor, ...others
+    };
   }
 
   showPullPicker() {
@@ -210,7 +221,7 @@ export default class Select extends Component {
         <Image
           style={{width: iconSize, height: iconSize, tintColor: iconTintColor}}
           source={icon === 'default' ? require('../../icons/select.png') : icon}
-          />
+        />
       );
     }
     return iconElement;

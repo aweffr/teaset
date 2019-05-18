@@ -32,8 +32,8 @@ export default class ModalIndicatorExample extends NavigationPage {
     let img = require('../images/faircup.jpg');
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <ListRow title='Show' onPress={() => this.show()} topSeparator='full' bottomSeparator='full' />
+        <View style={{height: 20}}/>
+        <ListRow title='Show' onPress={() => this.show()} topSeparator='full' bottomSeparator='full'/>
       </ScrollView>
     );
   }

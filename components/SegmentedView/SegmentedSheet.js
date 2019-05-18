@@ -9,7 +9,7 @@ import {View, Text, ViewPropTypes} from 'react-native';
 import Theme from 'teaset/themes/Theme';
 
 export default class SegmentedSheet extends Component {
-  
+
   static propTypes = {
     ...ViewPropTypes,
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.number]).isRequired,

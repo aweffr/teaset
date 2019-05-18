@@ -9,7 +9,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Theme from 'teaset/themes/Theme';
 
 export default class Checkbox extends TouchableOpacity {
-  
+
   static propTypes = {
     ...TouchableOpacity.propTypes,
     checked: PropTypes.bool,
@@ -91,12 +91,12 @@ export default class Checkbox extends TouchableOpacity {
     if (React.isValidElement(checkedIcon)) {
       checkedIcon = React.cloneElement(checkedIcon, {key: 'icon'});
     } else if (checkedIcon || checkedIcon === 0) {
-      checkedIcon = <Image key='icon' style={iconStyle} source={checkedIcon} />;
+      checkedIcon = <Image key='icon' style={iconStyle} source={checkedIcon}/>;
     }
     if (React.isValidElement(uncheckedIcon)) {
       uncheckedIcon = React.cloneElement(uncheckedIcon, {key: 'icon'});
     } else if (uncheckedIcon || uncheckedIcon === 0) {
-      uncheckedIcon = <Image key='icon' style={iconStyle} source={uncheckedIcon} />;
+      uncheckedIcon = <Image key='icon' style={iconStyle} source={uncheckedIcon}/>;
     }
     if (React.isValidElement(title)) {
       title = React.cloneElement(title, {key: 'title'});
@@ -118,7 +118,19 @@ export default class Checkbox extends TouchableOpacity {
       onChange && onChange(!checked);
     };
 
-    this.props = {style, size, title, checkedIcon, uncheckedIcon, titleStyle, checkedIconStyle, uncheckedIconStyle, children, onPress, onChange, ...others};
+    this.props = {
+      style,
+      size,
+      title,
+      checkedIcon,
+      uncheckedIcon,
+      titleStyle,
+      checkedIconStyle,
+      uncheckedIconStyle,
+      children,
+      onPress,
+      onChange, ...others
+    };
   }
 
   render() {

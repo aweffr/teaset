@@ -41,10 +41,20 @@ export default class SelectRow extends ListRow {
         placeholderTextColor={emptyTextColor}
         pickerTitle={typeof title === 'string' ? title : null}
         onSelected={(item, index) => onSelected && onSelected(items[index], index)}
-        />
+      />
     );
 
-    this.props = {title, detail, value, items, getItemValue, getItemText, emptyText, emptyTextColor, onSelected, ...others};
+    this.props = {
+      title,
+      detail,
+      value,
+      items,
+      getItemValue,
+      getItemText,
+      emptyText,
+      emptyTextColor,
+      onSelected, ...others
+    };
 
     super.buildProps();
   }

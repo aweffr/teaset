@@ -24,7 +24,7 @@ export default class PopoverPickerItem extends Component {
       paddingLeft: Theme.poppItemPaddingLeft,
       paddingRight: Theme.poppItemPaddingRight,
       paddingTop: Theme.poppItemPaddingTop,
-      paddingBottom: Theme.poppItemPaddingBottom,      
+      paddingBottom: Theme.poppItemPaddingBottom,
       borderColor: Theme.poppItemSeparatorColor,
       borderBottomWidth: Theme.poppItemSeparatorWidth,
       flexDirection: 'row',
@@ -37,7 +37,7 @@ export default class PopoverPickerItem extends Component {
     };
     accessory = (
       <View style={{paddingLeft: Theme.poppAccessoryPaddingLeft}}>
-        <Image style={imageStyle} source={selected ? require('teaset/icons/check.png') : null} />
+        <Image style={imageStyle} source={selected ? require('teaset/icons/check.png') : null}/>
       </View>
     );
     if (typeof title === 'string' || typeof title === 'number') {

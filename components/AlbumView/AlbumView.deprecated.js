@@ -150,7 +150,7 @@ export default class AlbumView extends Component {
       }, error => {
         onLoadImageFailure && onLoadImageFailure(index, error);
       });
-    }    
+    }
   }
 
   preloadImage(index) {
@@ -314,7 +314,7 @@ export default class AlbumView extends Component {
         Animated.spring(this.state.rightTranslateX, {
           toValue: newrtx,
           friction: 9,
-        }),      
+        }),
       ]).start();
       return true;
     }
@@ -351,14 +351,20 @@ export default class AlbumView extends Component {
     };
     let imageSource;
     switch (loadStatus) {
-      case 1: imageSource = thumbs[leftIndex]; break;
-      case 2: imageSource = images[leftIndex]; break;
-      default: imageSource = null;
+      case 1:
+        imageSource = thumbs[leftIndex];
+        break;
+      case 2:
+        imageSource = images[leftIndex];
+        break;
+      default:
+        imageSource = null;
     }
 
     return (
       <View style={viewStyle}>
-        <Animated.Image style={imageStyle} resizeMode='contain' pointerEvents='none' source={imageSource} key={'l' + leftIndex} />        
+        <Animated.Image style={imageStyle} resizeMode='contain' pointerEvents='none' source={imageSource}
+                        key={'l' + leftIndex}/>
       </View>
     );
   }
@@ -390,14 +396,20 @@ export default class AlbumView extends Component {
     };
     let imageSource;
     switch (loadStatus) {
-      case 1: imageSource = thumbs[rightIndex]; break;
-      case 2: imageSource = images[rightIndex]; break;
-      default: imageSource = null;
+      case 1:
+        imageSource = thumbs[rightIndex];
+        break;
+      case 2:
+        imageSource = images[rightIndex];
+        break;
+      default:
+        imageSource = null;
     }
 
     return (
       <View style={viewStyle}>
-        <Animated.Image style={imageStyle} resizeMode='contain' pointerEvents='none' source={imageSource} key={'r' + rightIndex} />        
+        <Animated.Image style={imageStyle} resizeMode='contain' pointerEvents='none' source={imageSource}
+                        key={'r' + rightIndex}/>
       </View>
     );
   }
@@ -410,9 +422,14 @@ export default class AlbumView extends Component {
     let {initWidth, initHeight} = this.getImageSizeInfo(index);
     let imageSource;
     switch (loadStatus) {
-      case 1: imageSource = thumbs[index]; break;
-      case 2: imageSource = images[index]; break;
-      default: imageSource = null;
+      case 1:
+        imageSource = thumbs[index];
+        break;
+      case 2:
+        imageSource = images[index];
+        break;
+      default:
+        imageSource = null;
     }
     return (
       <TransformView
@@ -435,7 +452,7 @@ export default class AlbumView extends Component {
           source={imageSource}
           onLoadEnd={() => this.checkLeftRight()}
           key={index}
-          />
+        />
       </TransformView>
     );
   }
@@ -446,7 +463,7 @@ export default class AlbumView extends Component {
     if (React.isValidElement(control)) {
       control = React.cloneElement(control, {index: this.state.index, total: images.length, carousel: this});
     } else if (control) {
-      control = <this.constructor.Control index={this.state.index} total={images.length} carousel={this} />
+      control = <this.constructor.Control index={this.state.index} total={images.length} carousel={this}/>
     }
 
     return (

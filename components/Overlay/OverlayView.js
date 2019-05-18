@@ -82,7 +82,7 @@ export default class OverlayView extends Component {
     ];
     return animates;
   }
-  
+
   get disappearAnimates() {
     let duration = 200;
     let animates = [
@@ -128,7 +128,7 @@ export default class OverlayView extends Component {
   }
 
   disappearCompleted() {
-    let {onDisappearCompleted} = this.props;    
+    let {onDisappearCompleted} = this.props;
     onDisappearCompleted && onDisappearCompleted();
   }
 
@@ -165,11 +165,11 @@ export default class OverlayView extends Component {
         <Animated.View
           style={[styles.screen, {backgroundColor: '#000', opacity: this.state.overlayOpacity}]}
           {...this.panResponder.panHandlers}
-          />
+        />
         <View style={style} pointerEvents='box-none'>
           {this.renderContent()}
         </View>
-        {autoKeyboardInsets ? <KeyboardSpace /> : null}
+        {autoKeyboardInsets ? <KeyboardSpace/> : null}
       </View>
     );
   }

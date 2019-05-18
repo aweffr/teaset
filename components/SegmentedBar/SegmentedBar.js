@@ -62,8 +62,8 @@ export default class SegmentedBar extends Component {
     if (this._activeIndex >= nextItemsLayout.length) {
       this._activeIndex = nextItemsLayout.length - 1;
     }
-   this.props = nextProps;
-   this.updateIndicator();
+    this.props = nextProps;
+    this.updateIndicator();
   }
 
   get activeIndex() {
@@ -107,7 +107,7 @@ export default class SegmentedBar extends Component {
     return 0;
   }
 
-  makeArray(olders, items, empty = {x: 0, y:0, width: 0, height: 0}) {
+  makeArray(olders, items, empty = {x: 0, y: 0, width: 0, height: 0}) {
     if (items instanceof Array) return items.map((item, index) => {
       return index < olders.length ? olders[index] : empty;
     });
@@ -132,7 +132,7 @@ export default class SegmentedBar extends Component {
     let indicatorXValue = this.indicatorXValue;
     let indicatorWidthValue = this.indicatorWidthValue;
     if (indicatorXValue === this._saveIndicatorXValue
-        && indicatorWidthValue === this._saveIndicatorWidthValue) {
+      && indicatorWidthValue === this._saveIndicatorWidthValue) {
       return;
     }
 
@@ -223,7 +223,7 @@ export default class SegmentedBar extends Component {
       style.bottom = indicatorPositionPadding || indicatorPositionPadding === 0 ? indicatorPositionPadding : Theme.sbIndicatorPositionPadding;
     }
     return (
-      <Animated.View style={style} />
+      <Animated.View style={style}/>
     );
   }
 
@@ -278,15 +278,16 @@ export default class SegmentedBar extends Component {
       >
         {children.map((item, index) => {
           return (
-          <TouchableOpacity
-            style={{alignItems: 'center', justifyContent: 'center'}}
-            key={index}
-            onPress={() => this.onButtonPress(index)}
-            onLayout={e => this.onButtonLayout(index, e)}
-          >
-            {this.renderItem(item, index)}
-          </TouchableOpacity>
-        )})}
+            <TouchableOpacity
+              style={{alignItems: 'center', justifyContent: 'center'}}
+              key={index}
+              onPress={() => this.onButtonPress(index)}
+              onLayout={e => this.onButtonLayout(index, e)}
+            >
+              {this.renderItem(item, index)}
+            </TouchableOpacity>
+          )
+        })}
         {this.renderIndicator()}
       </ScrollView>
     );

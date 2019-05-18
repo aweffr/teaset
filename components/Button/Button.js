@@ -9,7 +9,7 @@ import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import Theme from 'teaset/themes/Theme';
 
 export default class Button extends TouchableOpacity {
-  
+
   static propTypes = {
     ...TouchableOpacity.propTypes,
     type: PropTypes.oneOf(['default', 'primary', 'secondary', 'danger', 'link']),

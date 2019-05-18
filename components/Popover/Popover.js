@@ -45,7 +45,13 @@ export default class Popover extends Component {
 
   filterPopoverStyle(fs, includeRadius) {
     let {flexDirection, alignItems, justifyContent, margin, marginBottom, marginHorizontal, marginLeft, marginRight, marginTop, marginVertical, padding, paddingBottom, paddingHorizontal, paddingLeft, paddingRight, paddingTop, paddingVertical, backgroundColor, borderBottomColor, borderBottomLeftRadius, borderBottomRightRadius, borderBottomWidth, borderColor, borderLeftColor, borderLeftWidth, borderRadius, borderRightColor, borderRightWidth, borderStyle, borderTopColor, borderTopLeftRadius, borderTopRightRadius, borderTopWidth, borderWidth, ...others} = fs;
-    let style = includeRadius ? {borderBottomLeftRadius, borderBottomRightRadius, borderRadius, borderTopLeftRadius, borderTopRightRadius, ...others} : {...others};
+    let style = includeRadius ? {
+      borderBottomLeftRadius,
+      borderBottomRightRadius,
+      borderRadius,
+      borderTopLeftRadius,
+      borderTopRightRadius, ...others
+    } : {...others};
     for (let key in style) {
       if (style[key] === undefined) {
         delete style[key];
@@ -56,7 +62,42 @@ export default class Popover extends Component {
 
   filterContentStyle(fs) {
     let {flexDirection, alignItems, justifyContent, margin, marginBottom, marginHorizontal, marginLeft, marginRight, marginTop, marginVertical, padding, paddingBottom, paddingHorizontal, paddingLeft, paddingRight, paddingTop, paddingVertical, backgroundColor, borderBottomColor, borderBottomLeftRadius, borderBottomRightRadius, borderBottomWidth, borderColor, borderLeftColor, borderLeftWidth, borderRadius, borderRightColor, borderRightWidth, borderStyle, borderTopColor, borderTopLeftRadius, borderTopRightRadius, borderTopWidth, borderWidth, ...others} = fs;
-    let style = {flexDirection, alignItems, justifyContent, margin, marginBottom, marginHorizontal, marginLeft, marginRight, marginTop, marginVertical, padding, paddingBottom, paddingHorizontal, paddingLeft, paddingRight, paddingTop, paddingVertical, backgroundColor, borderBottomColor, borderBottomLeftRadius, borderBottomRightRadius, borderBottomWidth, borderColor, borderLeftColor, borderLeftWidth, borderRadius, borderRightColor, borderRightWidth, borderStyle, borderTopColor, borderTopLeftRadius, borderTopRightRadius, borderTopWidth, borderWidth};
+    let style = {
+      flexDirection,
+      alignItems,
+      justifyContent,
+      margin,
+      marginBottom,
+      marginHorizontal,
+      marginLeft,
+      marginRight,
+      marginTop,
+      marginVertical,
+      padding,
+      paddingBottom,
+      paddingHorizontal,
+      paddingLeft,
+      paddingRight,
+      paddingTop,
+      paddingVertical,
+      backgroundColor,
+      borderBottomColor,
+      borderBottomLeftRadius,
+      borderBottomRightRadius,
+      borderBottomWidth,
+      borderColor,
+      borderLeftColor,
+      borderLeftWidth,
+      borderRadius,
+      borderRightColor,
+      borderRightWidth,
+      borderStyle,
+      borderTopColor,
+      borderTopLeftRadius,
+      borderTopRightRadius,
+      borderTopWidth,
+      borderWidth
+    };
     for (let key in style) {
       if (style[key] === undefined) {
         delete style[key];
@@ -85,49 +126,143 @@ export default class Popover extends Component {
     let contentPadding = headerSize - borderWidth;
 
     let headerLayouts = {
-      none:        {},
-      topLeft:     {top: 0, left: 0, right: 0, height: headerSize, paddingTop: headerPadding, alignItems: 'flex-start', paddingLeft: headerPaddingCorner},
-      top:         {top: 0, left: 0, right: 0, height: headerSize, paddingTop: headerPadding, alignItems: 'center'},
-      topRight:    {top: 0, left: 0, right: 0, height: headerSize, paddingTop: headerPadding, alignItems: 'flex-end', paddingRight: headerPaddingCorner},
-      rightTop:    {top: 0, bottom: 0, right: 0, width: headerSize, paddingRight: headerPadding, alignItems: 'flex-end', justifyContent: 'flex-start', paddingTop: headerPaddingCorner},
-      right:       {top: 0, bottom: 0, right: 0, width: headerSize, paddingRight: headerPadding, alignItems: 'flex-end', justifyContent: 'center'},
-      rightBottom: {top: 0, bottom: 0, right: 0, width: headerSize, paddingRight: headerPadding, alignItems: 'flex-end', justifyContent: 'flex-end', paddingBottom: headerPaddingCorner},
-      bottomRight: {bottom: 0, left: 0, right: 0, height: headerSize, paddingBottom: headerPadding, alignItems: 'flex-end', justifyContent: 'flex-end', paddingRight: headerPaddingCorner},
-      bottom:      {bottom: 0, left: 0, right: 0, height: headerSize, paddingBottom: headerPadding, alignItems: 'center', justifyContent: 'flex-end'},
-      bottomLeft:  {bottom: 0, left: 0, right: 0, height: headerSize, paddingBottom: headerPadding, alignItems: 'flex-start', justifyContent: 'flex-end', paddingLeft: headerPaddingCorner},
-      leftBottom:  {top: 0, bottom: 0, left: 0, width: headerSize, paddingLeft: headerPadding, alignItems: 'flex-start', justifyContent: 'flex-end', paddingBottom: headerPaddingCorner},
-      left:        {top: 0, bottom: 0, left: 0, width: headerSize, paddingLeft: headerPadding, alignItems: 'flex-start', justifyContent: 'center'},
-      leftTop:     {top: 0, bottom: 0, left: 0, width: headerSize, paddingLeft: headerPadding, alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: headerPaddingCorner},
+      none: {},
+      topLeft: {
+        top: 0,
+        left: 0,
+        right: 0,
+        height: headerSize,
+        paddingTop: headerPadding,
+        alignItems: 'flex-start',
+        paddingLeft: headerPaddingCorner
+      },
+      top: {top: 0, left: 0, right: 0, height: headerSize, paddingTop: headerPadding, alignItems: 'center'},
+      topRight: {
+        top: 0,
+        left: 0,
+        right: 0,
+        height: headerSize,
+        paddingTop: headerPadding,
+        alignItems: 'flex-end',
+        paddingRight: headerPaddingCorner
+      },
+      rightTop: {
+        top: 0,
+        bottom: 0,
+        right: 0,
+        width: headerSize,
+        paddingRight: headerPadding,
+        alignItems: 'flex-end',
+        justifyContent: 'flex-start',
+        paddingTop: headerPaddingCorner
+      },
+      right: {
+        top: 0,
+        bottom: 0,
+        right: 0,
+        width: headerSize,
+        paddingRight: headerPadding,
+        alignItems: 'flex-end',
+        justifyContent: 'center'
+      },
+      rightBottom: {
+        top: 0,
+        bottom: 0,
+        right: 0,
+        width: headerSize,
+        paddingRight: headerPadding,
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        paddingBottom: headerPaddingCorner
+      },
+      bottomRight: {
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: headerSize,
+        paddingBottom: headerPadding,
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        paddingRight: headerPaddingCorner
+      },
+      bottom: {
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: headerSize,
+        paddingBottom: headerPadding,
+        alignItems: 'center',
+        justifyContent: 'flex-end'
+      },
+      bottomLeft: {
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: headerSize,
+        paddingBottom: headerPadding,
+        alignItems: 'flex-start',
+        justifyContent: 'flex-end',
+        paddingLeft: headerPaddingCorner
+      },
+      leftBottom: {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        width: headerSize,
+        paddingLeft: headerPadding,
+        alignItems: 'flex-start',
+        justifyContent: 'flex-end',
+        paddingBottom: headerPaddingCorner
+      },
+      left: {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        width: headerSize,
+        paddingLeft: headerPadding,
+        alignItems: 'flex-start',
+        justifyContent: 'center'
+      },
+      leftTop: {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        width: headerSize,
+        paddingLeft: headerPadding,
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        paddingTop: headerPaddingCorner
+      },
     };
     let arrowLayouts = {
-      none:        {},
-      topLeft:     {transform: [{rotate: '45deg'}]},
-      top:         {transform: [{rotate: '45deg'}]},
-      topRight:    {transform: [{rotate: '45deg'}]},
-      rightTop:    {transform: [{rotate: '135deg'}]},
-      right:       {transform: [{rotate: '135deg'}]},
+      none: {},
+      topLeft: {transform: [{rotate: '45deg'}]},
+      top: {transform: [{rotate: '45deg'}]},
+      topRight: {transform: [{rotate: '45deg'}]},
+      rightTop: {transform: [{rotate: '135deg'}]},
+      right: {transform: [{rotate: '135deg'}]},
       rightBottom: {transform: [{rotate: '135deg'}]},
       bottomRight: {transform: [{rotate: '225deg'}]},
-      bottom:      {transform: [{rotate: '225deg'}]},
-      bottomLeft:  {transform: [{rotate: '225deg'}]},
-      leftBottom:  {transform: [{rotate: '315deg'}]},
-      left:        {transform: [{rotate: '315deg'}]},
-      leftTop:     {transform: [{rotate: '315deg'}]},
+      bottom: {transform: [{rotate: '225deg'}]},
+      bottomLeft: {transform: [{rotate: '225deg'}]},
+      leftBottom: {transform: [{rotate: '315deg'}]},
+      left: {transform: [{rotate: '315deg'}]},
+      leftTop: {transform: [{rotate: '315deg'}]},
     };
     let popoverLayouts = {
-      none:        {},
-      topLeft:     {paddingTop: contentPadding},
-      top:         {paddingTop: contentPadding},
-      topRight:    {paddingTop: contentPadding},
-      rightTop:    {paddingRight: contentPadding},
-      right:       {paddingRight: contentPadding},
+      none: {},
+      topLeft: {paddingTop: contentPadding},
+      top: {paddingTop: contentPadding},
+      topRight: {paddingTop: contentPadding},
+      rightTop: {paddingRight: contentPadding},
+      right: {paddingRight: contentPadding},
       rightBottom: {paddingRight: contentPadding},
       bottomRight: {paddingBottom: contentPadding},
-      bottom:      {paddingBottom: contentPadding},
-      bottomLeft:  {paddingBottom: contentPadding},
-      leftBottom:  {paddingLeft: contentPadding},
-      left:        {paddingLeft: contentPadding},
-      leftTop:     {paddingLeft: contentPadding},
+      bottom: {paddingBottom: contentPadding},
+      bottomLeft: {paddingBottom: contentPadding},
+      leftBottom: {paddingLeft: contentPadding},
+      left: {paddingLeft: contentPadding},
+      leftTop: {paddingLeft: contentPadding},
     }
 
     if (!arrow) arrow = 'none';
@@ -191,7 +326,7 @@ export default class Popover extends Component {
         </View>
         {!arrow || arrow === 'none' ? null :
           <View style={headerStyle}>
-            <View style={arrowStyle} />
+            <View style={arrowStyle}/>
           </View>
         }
       </View>

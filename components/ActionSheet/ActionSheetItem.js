@@ -52,7 +52,7 @@ export default class ActionSheetItem extends Component {
         overflow: 'hidden',
       };
       separatorStyle = {
-        backgroundColor:Theme.asCancelItemSeparatorColor,
+        backgroundColor: Theme.asCancelItemSeparatorColor,
         height: Theme.asCancelItemSeparatorLineWidth,
       }
     } else {
@@ -66,7 +66,7 @@ export default class ActionSheetItem extends Component {
       };
       separatorStyle = {
         backgroundColor: Theme.asItemSeparatorColor,
-        height:Theme.asItemSeparatorLineWidth,
+        height: Theme.asItemSeparatorLineWidth,
       }
     }
 
@@ -83,30 +83,30 @@ export default class ActionSheetItem extends Component {
         topSeparator = null;
         break;
       case 'full':
-        topSeparator = <View style={separatorStyle} />;
+        topSeparator = <View style={separatorStyle}/>;
         break;
       case 'indent':
         topSeparator = (
           <View style={indentViewStyle}>
-            <View style={separatorStyle} />
+            <View style={separatorStyle}/>
           </View>
         );
-        break;        
+        break;
     }
     switch (bottomSeparator) {
       case 'none':
         bottomSeparator = null;
         break;
       case 'full':
-        bottomSeparator = <View style={separatorStyle} />;
+        bottomSeparator = <View style={separatorStyle}/>;
         break;
       case 'indent':
         bottomSeparator = (
           <View style={indentViewStyle}>
-            <View style={separatorStyle} />
+            <View style={separatorStyle}/>
           </View>
         );
-        break;        
+        break;
     }
 
     if (disabled) activeOpacity = 1;
@@ -119,7 +119,7 @@ export default class ActionSheetItem extends Component {
 
     let {style, title, topSeparator, bottomSeparator, ...others} = this.props;
     return (
-      <View style={{backgroundColor: 'rgba(0, 0, 0, 0)'}} >
+      <View style={{backgroundColor: 'rgba(0, 0, 0, 0)'}}>
         {topSeparator}
         <TouchableOpacity style={style} {...others}>
           {title}

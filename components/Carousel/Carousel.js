@@ -135,7 +135,7 @@ export default class Carousel extends Component {
     if (this.refs.scrollView) {
       if (this.props.horizontal)
         this.refs.scrollView.scrollTo({x: width * cardIndex, y: 0, animated: animated});
-      else this.refs.scrollView.scrollTo({x: 0, y: height * cardIndex, animated: animated});      
+      else this.refs.scrollView.scrollTo({x: 0, y: height * cardIndex, animated: animated});
     }
   }
 
@@ -160,7 +160,7 @@ export default class Carousel extends Component {
   onHorizontalScroll(e) {
     let {width} = this.state;
     let {x} = e.nativeEvent.contentOffset;
-    let cardIndex =  Math.round(x / width);
+    let cardIndex = Math.round(x / width);
 
     if (this.cycle) {
       if (cardIndex <= 0 && x <= 0) {
@@ -180,7 +180,7 @@ export default class Carousel extends Component {
   onVerticalScroll(e) {
     let {height} = this.state;
     let {y} = e.nativeEvent.contentOffset;
-    let cardIndex =  Math.round(y / height);
+    let cardIndex = Math.round(y / height);
 
     if (this.cycle) {
       if (cardIndex <= 0 && y <= 0) {
@@ -219,7 +219,7 @@ export default class Carousel extends Component {
     if (width <= 0 || height <= 0 || !children) return null;
     if (!(children instanceof Array)) children = [children];
     let cards = [];
-    let cardStyle = {width: width, height: height, overflow: 'hidden', flexDirection:'row', justifyContent: 'center'};
+    let cardStyle = {width: width, height: height, overflow: 'hidden', flexDirection: 'row', justifyContent: 'center'};
     this.cycle && cards.push(
       <View style={cardStyle} key={'card-head'}>{children[children.length - 1]}</View>
     );
@@ -244,7 +244,7 @@ export default class Carousel extends Component {
     if (React.isValidElement(control)) {
       control = React.cloneElement(control, {index: pageIndex, total: this.pageCount, carousel: this});
     } else if (control) {
-      control = <this.constructor.Control index={pageIndex} total={this.pageCount} carousel={this} />
+      control = <this.constructor.Control index={pageIndex} total={this.pageCount} carousel={this}/>
     }
     return (
       <View style={[style, {alignItems: 'stretch'}]}>
@@ -256,7 +256,7 @@ export default class Carousel extends Component {
           ref='scrollView'
           onScroll={(e) => this.onScroll(e)}
           onLayout={(e) => this.onLayout(e)}
-          >
+        >
           {this.renderCards()}
         </ScrollView>
         {control}

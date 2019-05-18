@@ -522,7 +522,7 @@ var BaseConfig = {
 };
 
 var TeaNavigatorScene = {
-  
+
   ...NavigatorSceneConfigs,
 
   PushFromRight: {

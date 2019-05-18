@@ -65,7 +65,7 @@ export default class NavigationPage extends BasePage {
       <NavigationBar.BackButton
         title={Theme.backButtonTitle}
         onPress={() => this.navigator.pop()}
-        />
+      />
     );
   }
 
@@ -79,7 +79,7 @@ export default class NavigationPage extends BasePage {
         title={this.renderNavigationTitle()}
         leftView={this.renderNavigationLeftView()}
         rightView={this.renderNavigationRightView()}
-        />
+      />
     );
   }
 
@@ -91,13 +91,13 @@ export default class NavigationPage extends BasePage {
     let {autoKeyboardInsets, keyboardTopInsets, pageContainerStyle, onLayout, ...others} = this.buildProps();
     return (
       <View onLayout={e => this.onLayout(e)} {...others}>
-        <View style={{flex: 1}} >
+        <View style={{flex: 1}}>
           <View style={pageContainerStyle}>
             {this.renderPage()}
           </View>
           {this.renderNavigationBar()}
         </View>
-        {autoKeyboardInsets ? <KeyboardSpace topInsets={keyboardTopInsets} /> : null}
+        {autoKeyboardInsets ? <KeyboardSpace topInsets={keyboardTopInsets}/> : null}
       </View>
     );
   }

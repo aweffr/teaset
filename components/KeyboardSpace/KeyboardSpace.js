@@ -77,7 +77,7 @@ export default class KeyboardSpace extends Component {
 
   render() {
     return (
-      <View style={[styles.keyboardSpace, {height: this.state.keyboardHeight}]} />
+      <View style={[styles.keyboardSpace, {height: this.state.keyboardHeight}]}/>
     );
   }
 

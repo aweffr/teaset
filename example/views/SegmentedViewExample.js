@@ -57,8 +57,8 @@ export default class SegmentedViewExample extends NavigationPage {
         <Image
           style={{width: 20, height: 20, tintColor}}
           source={isActive ? activeIcons[index] : icons[index]}
-          />
-        <Label style={{color: tintColor, paddingTop: 4}} text={titles[index]} />
+        />
+        <Label style={{color: tintColor, paddingTop: 4}} text={titles[index]}/>
       </View>
     );
   }
@@ -78,33 +78,33 @@ export default class SegmentedViewExample extends NavigationPage {
         >
           <SegmentedView.Sheet title={this.renderTitle(0)}>
             <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-              <Label type='detail' size='xl' text='Segment one' />
+              <Label type='detail' size='xl' text='Segment one'/>
             </View>
           </SegmentedView.Sheet>
           <SegmentedView.Sheet title={this.renderTitle(1)}>
             <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-              <Label type='detail' size='xl' text='Segment two' />
+              <Label type='detail' size='xl' text='Segment two'/>
             </View>
           </SegmentedView.Sheet>
           <SegmentedView.Sheet title={this.renderTitle(2)}>
             <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-              <Label type='detail' size='xl' text='Segment three' />
+              <Label type='detail' size='xl' text='Segment three'/>
             </View>
           </SegmentedView.Sheet>
         </SegmentedView>
-        <View style={{height: 20}} />
+        <View style={{height: 20}}/>
         <ListRow
           title='Type'
           detail={this.state.type}
           onPress={() => this.selectType()}
           topSeparator='full'
-          />
+        />
         <ListRow
           title='Custom'
-          detail={<Switch value={this.state.custom} onValueChange={value => this.setState({custom: value})} />}
+          detail={<Switch value={this.state.custom} onValueChange={value => this.setState({custom: value})}/>}
           bottomSeparator='full'
-          />
-        <View style={{height: Theme.screenInset.bottom}} />
+        />
+        <View style={{height: Theme.screenInset.bottom}}/>
       </View>
     );
   }

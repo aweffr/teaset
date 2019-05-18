@@ -50,8 +50,8 @@ export default class AlbumViewExample extends NavigationPage {
             thumbs={this.thumbs}
             defaultIndex={index}
             onPress={() => this.fullImageView && this.fullImageView.close()}
-            />
-          <StatusBar animated={false} hidden={true} />
+          />
+          <StatusBar animated={false} hidden={true}/>
         </Overlay.PopView>
       );
       Overlay.show(overlayView);
@@ -62,11 +62,11 @@ export default class AlbumViewExample extends NavigationPage {
   renderPage() {
     return (
       <View style={{flex: 1}}>
-        <View style={{padding: 20, flexDirection:'row', flexWrap:'wrap', alignItems:'flex-start'}}>
+        <View style={{padding: 20, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start'}}>
           {this.thumbs.map((item, index) => (
             <View style={{width: 100, height: 100, padding: 10}} key={index}>
               <TouchableOpacity style={{flex: 1}} ref={'it' + index} onPress={() => this.onImagePress(index)}>
-                <Image style={{width: null, height: null, flex: 1}} source={item} resizeMode='cover' />
+                <Image style={{width: null, height: null, flex: 1}} source={item} resizeMode='cover'/>
               </TouchableOpacity>
             </View>
           ))}

@@ -24,22 +24,22 @@ export default class TabViewExample extends BasePage {
 
   renderCustomButton() {
     let bigIcon = (
-        <View style={{
-          width: 54,
-          height: 54,
-          borderRadius: 27,
-          shadowColor: '#ccc',
-          shadowOffset: {height: -1},
-          shadowOpacity: 0.5,
-          shadowRadius: 0.5,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <Image
-            style={{width: 44, height: 44, borderRadius: 22}}
-            source={require('../images/faircup.jpg')}
-            />
-        </View>
+      <View style={{
+        width: 54,
+        height: 54,
+        borderRadius: 27,
+        shadowColor: '#ccc',
+        shadowOffset: {height: -1},
+        shadowOpacity: 0.5,
+        shadowRadius: 0.5,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <Image
+          style={{width: 44, height: 44, borderRadius: 22}}
+          source={require('../images/faircup.jpg')}
+        />
+      </View>
     );
     return (
       <TabView.Sheet
@@ -48,13 +48,13 @@ export default class TabViewExample extends BasePage {
         icon={bigIcon}
         iconContainerStyle={{justifyContent: 'flex-end'}}
         onPress={() => alert('Custom button press')}
-        />
+      />
     );
   }
 
   renderPage() {
     let {type, custom} = this.state;
-    let customBarStyle = Platform.OS == 'android'  ? null : {
+    let customBarStyle = Platform.OS == 'android' ? null : {
       borderTopWidth: 0,
       shadowColor: '#ccc',
       shadowOffset: {height: -1},
@@ -73,7 +73,7 @@ export default class TabViewExample extends BasePage {
             custom={custom}
             onChangeType={type => this.setState({type})}
             onChangeCustom={custom => this.setState({custom})}
-            />
+          />
         </TabView.Sheet>
         {custom ? this.renderCustomButton() : null}
         <TabView.Sheet
@@ -82,7 +82,7 @@ export default class TabViewExample extends BasePage {
           activeIcon={require('../icons/me_active.png')}
           badge={1}
         >
-          <MePage />
+          <MePage/>
         </TabView.Sheet>
       </TabView>
     );
@@ -113,10 +113,12 @@ class HomePage extends NavigationPage {
     let {type, custom, onChangeCustom} = this.props;
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <ListRow title='Type' detail={type} onPress={() => this.selectType()} topSeparator='full' bottomSeparator='full' />
-        <View style={{height: 20}} />
-        <ListRow title='Custom' detail={<Switch value={custom} onValueChange={value => onChangeCustom(value)} />} topSeparator='full' bottomSeparator='full' />
+        <View style={{height: 20}}/>
+        <ListRow title='Type' detail={type} onPress={() => this.selectType()} topSeparator='full'
+                 bottomSeparator='full'/>
+        <View style={{height: 20}}/>
+        <ListRow title='Custom' detail={<Switch value={custom} onValueChange={value => onChangeCustom(value)}/>}
+                 topSeparator='full' bottomSeparator='full'/>
       </ScrollView>
     );
   }
@@ -134,7 +136,7 @@ class MePage extends NavigationPage {
   renderPage() {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Label type='detail' size='xl' text={this.props.title} />
+        <Label type='detail' size='xl' text={this.props.title}/>
       </View>
     );
   }

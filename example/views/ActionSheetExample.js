@@ -28,9 +28,9 @@ export default class ActionSheetExample extends NavigationPage {
   renderPage() {
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <ListRow title='Default' onPress={() => this.show(false)} topSeparator='full' />
-        <ListRow title='Modal' onPress={() => this.show(true)} bottomSeparator='full' />
+        <View style={{height: 20}}/>
+        <ListRow title='Default' onPress={() => this.show(false)} topSeparator='full'/>
+        <ListRow title='Modal' onPress={() => this.show(true)} bottomSeparator='full'/>
       </ScrollView>
     );
   }

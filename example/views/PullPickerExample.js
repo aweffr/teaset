@@ -59,9 +59,9 @@ export default class PullPickerExample extends NavigationPage {
     let modalSelected = (modalSelectedIndex || modalSelectedIndex === 0) ? this.items[modalSelectedIndex] : null;
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <ListRow title='Default' detail={selected} onPress={() => this.show()} topSeparator='full' />
-        <ListRow title='Modal' detail={modalSelected} onPress={() => this.showModal()} bottomSeparator='full' />
+        <View style={{height: 20}}/>
+        <ListRow title='Default' detail={selected} onPress={() => this.show()} topSeparator='full'/>
+        <ListRow title='Modal' detail={modalSelected} onPress={() => this.showModal()} bottomSeparator='full'/>
       </ScrollView>
     );
   }

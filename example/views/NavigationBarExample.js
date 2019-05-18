@@ -44,30 +44,39 @@ export default class NavigationBarExample extends NavigationPage {
 
   get type() {
     switch (this.state.type) {
-      case 'Auto': return Platform.OS;
-      default: return this.state.type.toLowerCase();
+      case 'Auto':
+        return Platform.OS;
+      default:
+        return this.state.type.toLowerCase();
     }
   }
 
   get style() {
     switch (this.state.bgColor) {
-      case 'Default': return null;
-      case 'Custom': return {backgroundColor: '#e75f35'};
+      case 'Default':
+        return null;
+      case 'Custom':
+        return {backgroundColor: '#e75f35'};
     }
   }
 
   get tintColor() {
-    switch(this.state.tintColor) {
-      case 'Default': return null;
-      case 'Custom': return '#3af455';
+    switch (this.state.tintColor) {
+      case 'Default':
+        return null;
+      case 'Custom':
+        return '#3af455';
     }
   }
 
   get statusBarStyle() {
-    switch(this.state.statusBarStyle) {
-      case 'Default': return 'default';
-      case 'Light Content': return 'light-content';
-      case 'Dark Content': return 'dark-content';
+    switch (this.state.statusBarStyle) {
+      case 'Default':
+        return 'default';
+      case 'Light Content':
+        return 'light-content';
+      case 'Dark Content':
+        return 'dark-content';
     }
   }
 
@@ -80,21 +89,21 @@ export default class NavigationBarExample extends NavigationPage {
           <NavigationBar.BackButton
             title={Theme.backButtonTitle}
             onPress={() => this.navigator.pop()}
-            />
+          />
         );
       case 'Link button':
         return (
-          <NavigationBar.LinkButton title='Link' />
+          <NavigationBar.LinkButton title='Link'/>
         );
       case 'Icon button':
         return (
-          <NavigationBar.IconButton icon={require('../icons/search.png')} />
+          <NavigationBar.IconButton icon={require('../icons/search.png')}/>
         );
       case 'Two icon button':
         return (
           <View style={{flexDirection: 'row'}}>
-            <NavigationBar.IconButton icon={require('../icons/edit.png')} />
-            <NavigationBar.IconButton icon={require('../icons/trash.png')} />
+            <NavigationBar.IconButton icon={require('../icons/edit.png')}/>
+            <NavigationBar.IconButton icon={require('../icons/trash.png')}/>
           </View>
         );
     }
@@ -114,8 +123,8 @@ export default class NavigationBarExample extends NavigationPage {
         };
         return (
           <View style={titleStyle}>
-            <Label style={{color: Theme.navTitleColor, fontSize: 15}} text='Title' />
-            <Label style={{color: Theme.navTitleColor, fontSize: 11}}  text='Secondary title' />
+            <Label style={{color: Theme.navTitleColor, fontSize: 15}} text='Title'/>
+            <Label style={{color: Theme.navTitleColor, fontSize: 11}} text='Secondary title'/>
           </View>
         );
     }
@@ -140,13 +149,13 @@ export default class NavigationBarExample extends NavigationPage {
         rightView={this.renderNavigationRightView()}
         tintColor={this.tintColor}
         background={!customBackground ? null :
-          <Image style={{flex: 1}} resizeMode='cover' source={require('../images/teaset2.jpg')} />
+          <Image style={{flex: 1}} resizeMode='cover' source={require('../images/teaset2.jpg')}/>
         }
         hidden={hidden}
         animated={animated}
         statusBarStyle={this.statusBarStyle}
         statusBarHidden={statusBarHidden}
-        />
+      />
     );
   }
 
@@ -155,72 +164,72 @@ export default class NavigationBarExample extends NavigationPage {
     return (
       <ScrollView style={{flex: 1, paddingTop: Theme.statusBarHeight}}>
         <View style={{height: Theme.navBarContentHeight, alignItems: 'center', justifyContent: 'center'}}>
-          <Label style={{color: '#ccc'}} size='xl' text='ScrollView header' />
+          <Label style={{color: '#ccc'}} size='xl' text='ScrollView header'/>
         </View>
-        <View style={{height: 20}} />
+        <View style={{height: 20}}/>
         <SelectRow
           title='Type'
           value={type}
           items={this.typeItems}
           onSelected={(item, index) => this.setState({type: item})}
           topSeparator='full'
-          />
+        />
         <SelectRow
           title='Title'
           value={title}
           items={this.titleItems}
           onSelected={(item, index) => this.setState({title: item})}
-          />
+        />
         <SelectRow
           title='Left view'
           value={leftView}
           items={this.leftViewItems}
           onSelected={(item, index) => this.setState({leftView: item})}
-          />
+        />
         <SelectRow
           title='Right view'
           value={rightView}
           items={this.rightViewItems}
           onSelected={(item, index) => this.setState({rightView: item})}
-          />
+        />
         <SelectRow
           title='Background color'
           value={bgColor}
           items={this.bgColorItems}
           onSelected={(item, index) => this.setState({bgColor: item})}
-          />
+        />
         <SelectRow
           title='Tint color'
           value={tintColor}
           items={this.tintColorItems}
           onSelected={(item, index) => this.setState({tintColor: item})}
-          />
+        />
         <ListRow
           title='Custom background'
-          detail={<Switch value={customBackground} onValueChange={value => this.setState({customBackground: value})} />}
-          />
+          detail={<Switch value={customBackground} onValueChange={value => this.setState({customBackground: value})}/>}
+        />
         <ListRow
           title='Hidden'
-          detail={<Switch value={hidden} onValueChange={value => this.setState({hidden: value})} />}
-          />
+          detail={<Switch value={hidden} onValueChange={value => this.setState({hidden: value})}/>}
+        />
         <ListRow
           title='Animated'
-          detail={<Switch value={animated} onValueChange={value => this.setState({animated: value})} />}
+          detail={<Switch value={animated} onValueChange={value => this.setState({animated: value})}/>}
           bottomSeparator='full'
-          />
-        <View style={{height: 20}} />
+        />
+        <View style={{height: 20}}/>
         <SelectRow
           title='Status bar style (iOS)'
           value={statusBarStyle}
           items={this.statusBarStyleItems}
           onSelected={(item, index) => this.setState({statusBarStyle: item})}
           topSeparator='full'
-          />
+        />
         <ListRow
           title='Status bar hidden'
-          detail={<Switch value={statusBarHidden} onValueChange={value => this.setState({statusBarHidden: value})} />}
+          detail={<Switch value={statusBarHidden} onValueChange={value => this.setState({statusBarHidden: value})}/>}
           bottomSeparator='full'
-          />
+        />
       </ScrollView>
     );
   }

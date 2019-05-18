@@ -30,17 +30,17 @@ export default class MenuExample extends NavigationPage {
     return (
       <View style={{flex: 1, justifyContent: 'space-between'}}>
         <View style={{height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-          <Button title='Start' ref='btn1' onPress={() => this.show(this.refs['btn1'], 'start')} />
-          <Button title='Center' ref='btn2' onPress={() => this.show(this.refs['btn2'], 'center')} />
-          <Button title='End' ref='btn3' onPress={() => this.show(this.refs['btn3'], 'end')} />
+          <Button title='Start' ref='btn1' onPress={() => this.show(this.refs['btn1'], 'start')}/>
+          <Button title='Center' ref='btn2' onPress={() => this.show(this.refs['btn2'], 'center')}/>
+          <Button title='End' ref='btn3' onPress={() => this.show(this.refs['btn3'], 'end')}/>
         </View>
-        <View style={{flex: 1}} />
+        <View style={{flex: 1}}/>
         <View style={{height: 60, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-          <Button title='Start' ref='btn4' onPress={() => this.show(this.refs['btn4'], 'start')} />
-          <Button title='Center' ref='btn5' onPress={() => this.show(this.refs['btn5'], 'center')} />
-          <Button title='End' ref='btn6' onPress={() => this.show(this.refs['btn6'], 'end')} />
+          <Button title='Start' ref='btn4' onPress={() => this.show(this.refs['btn4'], 'start')}/>
+          <Button title='Center' ref='btn5' onPress={() => this.show(this.refs['btn5'], 'center')}/>
+          <Button title='End' ref='btn6' onPress={() => this.show(this.refs['btn6'], 'end')}/>
         </View>
-        <View style={{height: Theme.screenInset.bottom}} />
+        <View style={{height: Theme.screenInset.bottom}}/>
       </View>
     );
   }

@@ -138,7 +138,7 @@ export default class TransformView extends Component {
         }
       }
 
-      switch(this.lockDirection) {
+      switch (this.lockDirection) {
         case 'x':
           translateX.setValue(0);
           translateY.setValue(translateY._value + dy);
@@ -194,7 +194,7 @@ export default class TransformView extends Component {
       t1 = {x: touches[0].pageX, y: touches[0].pageY};
     } else {
       t0 = {x: (prevTouches[0].pageX + prevTouches[1].pageX) / 2, y: (prevTouches[0].pageY + prevTouches[1].pageY) / 2};
-      t1 = {x: (touches[0].pageX + touches[1].pageX) / 2, y: (touches[0].pageY + touches[1].pageY) /2};
+      t1 = {x: (touches[0].pageX + touches[1].pageX) / 2, y: (touches[0].pageY + touches[1].pageY) / 2};
     }
     let dx = t1.x - t0.x;
     let dy = t1.y - t0.y;
@@ -304,7 +304,7 @@ export default class TransformView extends Component {
           newY = 0;
         } else if (y > 0) {
           newY = translateY._value - y;
-        } else if ((y + height) <  this.viewLayout.height) {
+        } else if ((y + height) < this.viewLayout.height) {
           newY = translateY._value + (this.viewLayout.height - (y + height));
         }
       }

@@ -104,7 +104,7 @@ export default class BasePage extends Component {
     return (
       <View {...others}>
         {this.renderPage()}
-        {autoKeyboardInsets ? <KeyboardSpace topInsets={keyboardTopInsets} /> : null}
+        {autoKeyboardInsets ? <KeyboardSpace topInsets={keyboardTopInsets}/> : null}
       </View>
     );
   }

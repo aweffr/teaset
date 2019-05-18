@@ -11,6 +11,6 @@ Theme.set({fitIPhoneX: true});
 
 export default class App extends Component<{}> {
   render() {
-    return <TeaNavigator rootView={<TeasetExampleHome />} />;
+    return <TeaNavigator rootView={<TeasetExampleHome/>}/>;
   }
 }

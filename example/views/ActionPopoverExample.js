@@ -29,7 +29,7 @@ export default class ActionPopoverExample extends NavigationPage {
   renderPage() {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Button title='Show' ref='apButton' onPress={() => this.show(this.refs['apButton'])} />
+        <Button title='Show' ref='apButton' onPress={() => this.show(this.refs['apButton'])}/>
       </View>
     );
   }

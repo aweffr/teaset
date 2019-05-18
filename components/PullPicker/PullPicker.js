@@ -21,7 +21,7 @@ export default class PullPicker extends Overlay {
         selectedIndex={selectedIndex}
         onSelected={onSelected}
         {...options}
-        />
+      />
     );
   }
 

@@ -42,7 +42,7 @@ export default class NavigationBackButton extends NavigationButton {
     };
 
     children = [
-      <Image key={'icon'} style={iconStyle} source={icon} />,
+      <Image key={'icon'} style={iconStyle} source={icon}/>,
       <Text key={'title'} style={textStyle} numberOfLines={1} allowFontScaling={false}>{title}</Text>,
     ];
 

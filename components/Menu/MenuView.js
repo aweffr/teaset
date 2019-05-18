@@ -33,10 +33,10 @@ export default class MenuView extends Overlay.PopoverView {
   static Item = MenuItem;
 
   onItemPress(item) {
-    setTimeout(()=>{
+    setTimeout(() => {
       this.close(false);
       item.onPress && item.onPress();
-  }, 0)
+    }, 0)
   }
 
   buildProps() {
@@ -78,7 +78,7 @@ export default class MenuView extends Overlay.PopoverView {
           title={title}
           icon={icon ? icon : iconDefault}
           onPress={() => this.onItemPress(item)}
-          />
+        />
       );
     }
 

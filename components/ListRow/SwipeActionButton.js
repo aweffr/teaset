@@ -9,7 +9,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import Theme from 'teaset/themes/Theme';
 
 export default class SwipeActionButton extends TouchableOpacity {
-  
+
   static propTypes = {
     ...TouchableOpacity.propTypes,
     type: PropTypes.oneOf(['default', 'danger']),

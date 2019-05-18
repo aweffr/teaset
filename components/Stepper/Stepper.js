@@ -136,7 +136,7 @@ export default class Stepper extends Component {
     let separator;
     if (showSeparator) {
       let fs = StyleSheet.flatten(style);
-      separator = <View style={{backgroundColor: fs.borderColor, width: fs.borderWidth, height: this.state.height}} />;
+      separator = <View style={{backgroundColor: fs.borderColor, width: fs.borderWidth, height: this.state.height}}/>;
     }
 
     let subDisabled = !editable || value <= min;

@@ -25,9 +25,9 @@ export default class ProjectorExample extends NavigationPage {
   renderSlide(color) {
     return (
       <View style={{backgroundColor: color, padding: 30, flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Label text='Enter something' />
-        <View style={{height: 12}} />
-        <View><Input style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', width: 200}} /></View>
+        <Label text='Enter something'/>
+        <View style={{height: 12}}/>
+        <View><Input style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', width: 200}}/></View>
       </View>
     );
   }
@@ -38,7 +38,7 @@ export default class ProjectorExample extends NavigationPage {
         title={i}
         type={this.state.index == i ? 'primary' : 'default'}
         onPress={() => this.setState({index: i})}
-        />
+      />
     );
   }
 
@@ -51,7 +51,7 @@ export default class ProjectorExample extends NavigationPage {
           {this.renderSlide('rgba(250, 231, 133, 0.1)')}
           {this.renderSlide('rgba(244, 131, 131, 0.1)')}
         </Projector>
-        <View style={{height: 20}} />
+        <View style={{height: 20}}/>
         <ListRow
           title='Slide no'
           detail={
@@ -64,7 +64,7 @@ export default class ProjectorExample extends NavigationPage {
           }
           topSeparator='full'
           bottomSeparator='full'
-          />
+        />
       </ScrollView>
     );
   }

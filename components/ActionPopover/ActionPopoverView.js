@@ -58,11 +58,11 @@ export default class ActionPopoverView extends Overlay.PopoverView {
           title={item.title}
           leftSeparator={i !== 0}
           onPress={() => this.onItemPress(item)}
-          />
+        />
       );
     }
 
-    this.props = {popoverStyle, directionInsets, items, children, ...others} ;
+    this.props = {popoverStyle, directionInsets, items, children, ...others};
 
     super.buildProps();
   }

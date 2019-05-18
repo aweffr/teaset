@@ -92,10 +92,18 @@ export default class TopView extends Component {
         for (let name in item) {
           let value = item[name];
           switch (name) {
-            case 'translateX': tx = value; break;
-            case 'translateY': ty = value; break;
-            case 'scaleX': sx = value; break;
-            case 'scaleY': sy = value; break;
+            case 'translateX':
+              tx = value;
+              break;
+            case 'translateY':
+              ty = value;
+              break;
+            case 'scaleX':
+              sx = value;
+              break;
+            case 'scaleY':
+              sy = value;
+              break;
           }
         }
       }
@@ -204,7 +212,7 @@ if (!AppRegistry.registerComponentOld) {
   AppRegistry.registerComponentOld = AppRegistry.registerComponent;
 }
 
-AppRegistry.registerComponent = function(appKey, componentProvider) {
+AppRegistry.registerComponent = function (appKey, componentProvider) {
 
   class RootElement extends Component {
     render() {

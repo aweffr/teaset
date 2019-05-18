@@ -53,13 +53,18 @@ export default class PullPickerView extends Overlay.PullView {
     }
     let {left: leftInset, right: rightInset} = Theme.screenInset;
     children = (
-      <View style={{backgroundColor: Theme.pupColor, maxHeight: Theme.pupMaxHeight, paddingLeft: leftInset, paddingRight: rightInset}}>
+      <View style={{
+        backgroundColor: Theme.pupColor,
+        maxHeight: Theme.pupMaxHeight,
+        paddingLeft: leftInset,
+        paddingRight: rightInset
+      }}>
         {!title ? null :
           <View style={headerRowStyle}>
-            <Label style={headerTextStyle} text={title} />
+            <Label style={headerTextStyle} text={title}/>
           </View>
         }
-        {!title ? null : <View style={headerSeparatorStyle} />}
+        {!title ? null : <View style={headerSeparatorStyle}/>}
         <ScrollView style={{backgroundColor: Theme.pupColor, flexGrow: 1}}>
           {items && items.map((item, index) => (
             <this.constructor.Item
@@ -67,11 +72,12 @@ export default class PullPickerView extends Overlay.PullView {
               style={{backgroundColor: Theme.pupItemColor}}
               title={getItemText ? getItemText(item, index) : item}
               selected={index === selectedIndex}
-              bottomSeparator={<View style={{backgroundColor: Theme.pupSeparatorColor, height: Theme.rowSeparatorLineWidth}} />}
+              bottomSeparator={<View
+                style={{backgroundColor: Theme.pupSeparatorColor, height: Theme.rowSeparatorLineWidth}}/>}
               onPress={() => this.onItemPress(index)}
-              />
+            />
           ))}
-          <View style={{height: Theme.screenInset.bottom}} />
+          <View style={{height: Theme.screenInset.bottom}}/>
         </ScrollView>
       </View>
     );

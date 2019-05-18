@@ -22,7 +22,7 @@ export default class PopoverPicker extends Overlay {
         selectedIndex={selectedIndex}
         onSelected={onSelected}
         {...options}
-        />
+      />
     );
   }
 

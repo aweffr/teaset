@@ -35,26 +35,27 @@ export default class DrawerExample extends NavigationPage {
   renderDrawerMenu() {
     return (
       <View style={{backgroundColor: Theme.defaultColor, width: 260, flex: 1}}>
-        <View style={{height: 60}} />
+        <View style={{height: 60}}/>
         <ListRow
           icon={
             <View style={{paddingRight: 12}}>
-              <Image style={{width: 30, height: 30, tintColor: Theme.primaryColor}} source={require('../icons/me_active.png')} />
+              <Image style={{width: 30, height: 30, tintColor: Theme.primaryColor}}
+                     source={require('../icons/me_active.png')}/>
             </View>
           }
           title='User name'
-          />
+        />
         <ListRow
           icon={require('../icons/home_active.png')}
           title='Home'
-          />
+        />
         <ListRow
           icon={require('../icons/store_active.png')}
           title='Store'
           bottomSeparator='none'
-          />
-        <View style={{flex: 1}} />
-        <Button type='link' size='sm' title='Hide' onPress={() => this.drawer && this.drawer.close()} />
+        />
+        <View style={{flex: 1}}/>
+        <Button type='link' size='sm' title='Hide' onPress={() => this.drawer && this.drawer.close()}/>
       </View>
     );
   }
@@ -68,7 +69,7 @@ export default class DrawerExample extends NavigationPage {
       }}>
         <View style={{backgroundColor: Theme.defaultColor, height: 260}}>
           <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <Label type='detail' size='xl' text='Drawer' />
+            <Label type='detail' size='xl' text='Drawer'/>
           </View>
         </View>
         <Image
@@ -82,7 +83,7 @@ export default class DrawerExample extends NavigationPage {
             borderRadius: 30
           }}
           source={require('../images/faircup.jpg')}
-          />
+        />
       </View>
     );
   }
@@ -91,12 +92,12 @@ export default class DrawerExample extends NavigationPage {
     let {rootTransform} = this.state;
     return (
       <ScrollView style={{flex: 1}}>
-        <View style={{height: 20}} />
-        <ListRow title='Left side' onPress={() => this.show('left')} topSeparator='full' />
-        <ListRow title='Right side' onPress={() => this.show('right')} />
-        <ListRow title='Top side' onPress={() => this.show('top')} />
+        <View style={{height: 20}}/>
+        <ListRow title='Left side' onPress={() => this.show('left')} topSeparator='full'/>
+        <ListRow title='Right side' onPress={() => this.show('right')}/>
+        <ListRow title='Top side' onPress={() => this.show('top')}/>
         <ListRow title='Bottom side' onPress={() => this.show('bottom')} bottomSeparator='full'/>
-        <View style={{height: 20}} />
+        <View style={{height: 20}}/>
         <SelectRow
           title='Root transform'
           value={rootTransform}
@@ -104,7 +105,7 @@ export default class DrawerExample extends NavigationPage {
           onSelected={(item, index) => this.setState({rootTransform: item})}
           topSeparator='full'
           bottomSeparator='full'
-          />
+        />
       </ScrollView>
     );
   }

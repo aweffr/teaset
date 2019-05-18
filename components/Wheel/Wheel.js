@@ -200,9 +200,9 @@ export default class Wheel extends Component {
       zIndex: 100,
     }].concat(maskStyle);
     if (holeLine === undefined) {
-      holeLine = <View style={{height: Theme.wheelHoleLineWidth, backgroundColor: Theme.wheelHoleLineColor}} />;
+      holeLine = <View style={{height: Theme.wheelHoleLineWidth, backgroundColor: Theme.wheelHoleLineColor}}/>;
     } else if (typeof holeLine === 'number') {
-      holeLine = <View style={{height: holeLine, backgroundColor: Theme.wheelHoleLineColor}} />;
+      holeLine = <View style={{height: holeLine, backgroundColor: Theme.wheelHoleLineColor}}/>;
     }
 
     this.props = {style, items, itemStyle, holeStyle, maskStyle, holeLine, ...others};
@@ -216,7 +216,7 @@ export default class Wheel extends Component {
     if (typeof item === 'string' || typeof item === 'number') {
       item = <Text style={itemStyle}>{item}</Text>;
     }
-    
+
     return (
       <this.constructor.Item
         itemHeight={this.holeHeight}
@@ -243,11 +243,11 @@ export default class Wheel extends Component {
         {...this.panResponder.panHandlers}
       >
         {items.map((item, index) => this.renderItem(item, index))}
-        <View style={maskStyle} />
+        <View style={maskStyle}/>
         {holeLine}
-        <View style={holeStyle} onLayout={e => this.onHoleLayout(e)} />
+        <View style={holeStyle} onLayout={e => this.onHoleLayout(e)}/>
         {holeLine}
-        <View style={maskStyle} />
+        <View style={maskStyle}/>
       </View>
     )
   }
