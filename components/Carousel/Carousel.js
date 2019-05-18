@@ -219,7 +219,7 @@ export default class Carousel extends Component {
     if (width <= 0 || height <= 0 || !children) return null;
     if (!(children instanceof Array)) children = [children];
     let cards = [];
-    let cardStyle = {width: width, height: height, overflow: 'hidden'};
+    let cardStyle = {width: width, height: height, overflow: 'hidden', flexDirection:'row', justifyContent: 'center'};
     this.cycle && cards.push(
       <View style={cardStyle} key={'card-head'}>{children[children.length - 1]}</View>
     );
